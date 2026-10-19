@@ -92,7 +92,8 @@ adminRouter.delete('/papers/:id', async (req, res) => {
   const paper = getPaper(req.params.id);
   const { file_key } = db.prepare('SELECT file_key FROM papers WHERE id = ?').get(paper.id);
   db.prepare('DELETE FROM papers WHERE id = ?').run(paper.id);
-  await storage.remove(file_key);
+  // The paper is gone from the site either way; a leftover file is only wasted space.
+  await storage.remove(file_key).catch((err) => console.error(`Couldn't delete file ${file_key}: ${err.message}`));
   res.json({ ok: true });
 });
 

@@ -5,6 +5,7 @@ import multer from 'multer';
 import { config } from './config.js';
 import './db.js';
 import { HttpError, loadUser } from './auth.js';
+import { storage } from './storage.js';
 import { authRouter } from './routes/auth.js';
 import { catalogRouter } from './routes/catalog.js';
 import { papersRouter } from './routes/papers.js';
@@ -45,3 +46,9 @@ app.use((err, _req, res, _next) => {
 app.listen(config.port, () => {
   console.log(`PYQ Hub running at ${config.baseUrl}`);
 });
+
+// Say where PDFs go, and warn early if R2 can't be reached rather than on the first upload.
+storage
+  .check()
+  .then(() => console.log(`PDFs are stored in ${storage.name}`))
+  .catch((err) => console.error(`Can't reach ${storage.name}: ${err.name}: ${err.message}`));

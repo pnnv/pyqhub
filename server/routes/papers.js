@@ -127,7 +127,7 @@ papersRouter.get('/papers/:id', (req, res) => {
   res.json({ paper });
 });
 
-papersRouter.get('/papers/:id/file', (req, res) => {
+papersRouter.get('/papers/:id/file', async (req, res) => {
   const paper = findVisiblePaper(req.params.id, req.user);
   const { file_key } = db.prepare('SELECT file_key FROM papers WHERE id = ?').get(paper.id);
   const download = req.query.download === '1';
@@ -142,12 +142,17 @@ papersRouter.get('/papers/:id/file', (req, res) => {
       ? (paper.quiz_label || 'Quiz').replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '')
       : paper.exam_type === 'mid' ? 'MidSem' : 'EndSem';
   const filename = `${paper.subject_code}_${type}_${paper.exam_year}.pdf`;
+  const file = await storage.deliver(file_key, { filename, download });
+  if (file.url) {
+    // R2: a fresh signed link per request, so every view and download is counted above.
+    res.setHeader('Cache-Control', 'no-store');
+    return res.redirect(302, file.url);
+  }
   res.setHeader('Content-Type', 'application/pdf');
-  res.setHeader('Content-Disposition', `${download ? 'attachment' : 'inline'}; filename="${filename}"`);
+  res.setHeader('Content-Disposition', file.disposition);
   res.setHeader('Cache-Control', 'private, max-age=300');
-  const stream = storage.stream(file_key);
-  stream.on('error', () => res.destroy());
-  stream.pipe(res);
+  file.stream.on('error', () => res.destroy());
+  file.stream.pipe(res);
 });
 
 papersRouter.post('/papers', requireVerified, upload.single('file'), async (req, res) => {
