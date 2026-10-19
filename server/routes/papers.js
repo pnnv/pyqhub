@@ -65,8 +65,31 @@ papersRouter.get('/papers', (req, res) => {
     )
     .all(...params);
 
+  // For each matching course: every approved paper from the last five years (ignoring the
+  // year/exam filters), so the results can show which slots are covered and which are missing.
+  const since = thisYear() - 4;
+  const slots = db.prepare(
+    `SELECT p.id, p.exam_year, p.exam_type FROM papers p JOIN subjects s ON s.id = p.subject_id
+      WHERE s.code = ? AND p.status = 'approved' AND p.exam_year >= ?
+      ORDER BY p.exam_year DESC, p.exam_type`,
+  );
+  const total = db.prepare(
+    `SELECT COUNT(*) AS n FROM papers p JOIN subjects s ON s.id = p.subject_id
+      WHERE s.code = ? AND p.status = 'approved'`,
+  );
+  const courses = [];
+  for (const p of papers) {
+    if (courses.at(-1)?.code === p.subject_code) continue;
+    courses.push({
+      code: p.subject_code,
+      name: p.subject_name,
+      total: total.get(p.subject_code).n,
+      slots: slots.all(p.subject_code, since),
+    });
+  }
+
   if (q) logEvent('search', { userId: req.user?.id, detail: q.slice(0, 100) });
-  res.json({ papers: papers.map(({ uploader_id, reject_reason, status, ...p }) => p) });
+  res.json({ papers: papers.map(({ uploader_id, reject_reason, status, ...p }) => p), courses });
 });
 
 papersRouter.get('/papers/:id', (req, res) => {

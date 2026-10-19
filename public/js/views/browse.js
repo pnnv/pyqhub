@@ -53,9 +53,9 @@ const DOWNLOAD_ICON = html`<svg viewBox="0 0 20 20" width="16" height="16" aria-
 
 // "the 2025 end-sem", "the 2025 end-sem and 2024 mid-sem", "3 papers"
 function listSlots(slots) {
-  const names = slots.map((p) => `${p.exam_year} ${examLabel(p.exam_type).toLowerCase()}`);
-  if (names.length > 2) return `${names.length} papers are`;
-  return `The ${names.join(' and ')} ${names.length > 1 ? 'are' : 'is'}`;
+  if (slots.length > 2) return html`${slots.length} papers are`;
+  const names = slots.map((p) => html`<span class="nowrap">${p.exam_year} ${examLabel(p.exam_type).toLowerCase()}</span>`);
+  return html`The ${names[0]}${names[1] ? html` and ${names[1]}` : ''} ${names.length > 1 ? 'are' : 'is'}`;
 }
 
 export async function courseView({ params }) {
@@ -70,14 +70,10 @@ export async function courseView({ params }) {
   const waiting = pending.filter((p) => !slot(papers, p.exam_year, p.exam_type).length);
 
   const approvedYears = papers.map((p) => p.exam_year);
-  const summary = [
-    papers.length
-      ? `${plural(papers.length, 'paper')} from ${Math.min(...approvedYears)}${Math.min(...approvedYears) === Math.max(...approvedYears) ? '' : ` to ${Math.max(...approvedYears)}`}.`
-      : 'No papers yet.',
-    waiting.length ? `${listSlots(waiting)} waiting for review.` : '',
-  ]
-    .filter(Boolean)
-    .join(' ');
+  const [first, last] = [Math.min(...approvedYears), Math.max(...approvedYears)];
+  const summary = html`${papers.length
+    ? `${plural(papers.length, 'paper')} from ${first}${first === last ? '' : ` to ${last}`}.`
+    : 'No papers yet.'}${waiting.length ? html` ${listSlots(waiting)} waiting for review.` : ''}`;
 
   const cell = (y, t) => {
     const label = `${subject.code} ${examLabel(t).toLowerCase()} ${y}`;
@@ -144,19 +140,22 @@ export async function courseView({ params }) {
   };
 }
 
+const square = (course, year, type, paper) => {
+  const letter = type === 'mid' ? 'M' : 'E';
+  const what = `${course} ${examLabel(type).toLowerCase()} ${year}`;
+  return paper
+    ? html`<a class="sq sq-have" href="/paper/${paper.id}" aria-label="${what}, open the paper">${letter}</a>`
+    : html`<a class="sq sq-missing" href="/upload?course=${course}&year=${year}&exam=${type}" aria-label="${what} is missing, upload it">${letter}</a>`;
+};
+
 export async function searchView({ query }) {
   const q = query.get('q') ?? '';
   const year = query.get('year') ?? '';
   const type = query.get('type') ?? '';
   const params = new URLSearchParams({ q, year, type });
-  const { papers } = await api(`/papers?${params}`);
-
-  // Group results by course, keeping server order (code, then newest first).
-  const courses = new Map();
-  for (const p of papers) {
-    if (!courses.has(p.subject_code)) courses.set(p.subject_code, { code: p.subject_code, name: p.subject_name, papers: [] });
-    courses.get(p.subject_code).papers.push(p);
-  }
+  const { papers, courses } = await api(`/papers?${params}`);
+  const thisYear = new Date().getFullYear();
+  const years = Array.from({ length: 5 }, (_, i) => thisYear - i);
 
   const filters = [year && `from ${year}`, type && `${examLabel(type).toLowerCase()} only`].filter(Boolean);
   const heading = q ? html`Papers matching “${q}”` : 'All papers';
@@ -164,37 +163,48 @@ export async function searchView({ query }) {
   return {
     title: q ? `Search: ${q}` : 'All papers',
     body: html`
-      <div class="margin page-head">
+      <div class="page-head">
         <p class="crumbs"><a href="/">New search</a></p>
         <h1>${heading}</h1>
-        <p class="lede">
-          ${papers.length ? `${plural(papers.length, 'paper')} in ${plural(courses.size, 'course')}` : 'No papers found'}${filters.length ? `, ${filters.join(', ')}` : ''}.
+        <p class="lede num">
+          ${papers.length ? `${plural(papers.length, 'paper')} in ${plural(courses.length, 'course')}` : 'No papers found'}${filters.length ? `, ${filters.join(', ')}` : ''}.
         </p>
       </div>
-      <div class="margin">
-        ${courses.size
-          ? html`<ul class="results">
-              ${[...courses.values()].map(
+      ${courses.length
+        ? html`<p class="legend small">
+              <span class="sq sq-have sq-mini" aria-hidden="true">M</span> is a paper you can open.
+              <span class="sq sq-missing sq-mini" aria-hidden="true">E</span> is missing; choose it to upload one.
+              M is mid-sem, E is end-sem. Showing ${years.at(-1)} to ${thisYear}.
+            </p>
+            <ul class="results">
+              ${courses.map(
                 (c) => html`<li class="result">
                   <a class="result-head" href="/course/${c.code}">
                     <span class="row-code">${highlight(c.code, q)}</span>
-                    <span class="row-title">${highlight(c.name, q)}</span>
+                    <span class="result-name">
+                      <span class="row-title">${highlight(c.name, q)}</span>
+                      <span class="small muted num">${plural(c.total, 'paper')}</span>
+                    </span>
                   </a>
-                  <div class="result-papers">
-                    ${c.papers.map(
-                      (p) => html`<a class="chip" href="/paper/${p.id}">${examLabel(p.exam_type)} ${p.exam_year}</a>`,
+                  <div class="strip" role="group" aria-label="${c.code} papers, ${years.at(-1)} to ${thisYear}">
+                    ${years.map(
+                      (y) => html`<div class="strip-year">
+                        <div class="strip-pair">
+                          ${['mid', 'end'].map((t) => square(c.code, y, t, c.slots.find((p) => p.exam_year === y && p.exam_type === t)))}
+                        </div>
+                        <span class="strip-label">${y}</span>
+                      </div>`,
                     )}
                   </div>
                 </li>`,
               )}
             </ul>`
-          : html`<div class="notice">
-              <p>Nothing matches${q ? html` “${q}”` : ''}${filters.length ? ` ${filters.join(', ')}` : ''}.</p>
-              <p>Search by course code like <a href="/search?q=CS301">CS301</a> or by name, or
-                ${year || type ? html`<a href="/search?q=${encodeURIComponent(q)}">remove the filters</a>` : html`<a href="/">browse by branch</a>`}.
-              </p>
-            </div>`}
-      </div>
+        : html`<div class="notice">
+            <p>Nothing matches${q ? html` “${q}”` : ''}${filters.length ? ` ${filters.join(', ')}` : ''}.</p>
+            <p>Search by course code like <a href="/search?q=CS301">CS301</a> or by name, or
+              ${year || type ? html`<a href="/search?q=${encodeURIComponent(q)}">remove the filters</a>` : html`<a href="/">browse by branch</a>`}.
+            </p>
+          </div>`}
     `,
   };
 }

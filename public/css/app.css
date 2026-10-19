@@ -271,7 +271,6 @@ mark {
 .find,
 .rows,
 .results,
-.papers,
 .figures,
 .stack-form,
 .table-wrap,
@@ -337,6 +336,10 @@ section + section {
 
 .muted {
   color: var(--muted);
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .small {
@@ -908,54 +911,195 @@ section + section {
   margin-bottom: 28px;
 }
 
-.paper-year {
-  display: grid;
-  grid-template-columns: var(--code-col) 1fr;
-  gap: 0 16px;
-  align-items: start;
-  padding: 4px var(--row-pad);
+/* Year x exam grid, like the "for examiner's use only" box on a booklet cover */
+.exam-grid {
+  --year-col: 120px;
+  background: var(--paper);
+  border: 1px solid var(--sheet-edge);
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-.paper-year + .paper-year {
-  border-top: 1px solid var(--rule);
+.exam-grid table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
 
-.paper-year h2 {
+.exam-grid th,
+.exam-grid td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.exam-grid tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.exam-grid td + td {
+  border-left: 1px solid var(--rule);
+}
+
+.exam-grid thead th {
+  font-size: var(--t-15);
+  font-weight: 800;
+  color: var(--ink);
+  border-bottom: 2px solid var(--lilac-edge);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.exam-grid .year-col {
+  width: var(--year-col);
+  text-align: right;
+  padding-right: 18px;
+  border-right: 2px solid var(--margin);
+}
+
+.exam-grid tbody .year-col {
   font-family: var(--mono);
+  font-weight: 700;
   font-size: var(--t-24);
-  letter-spacing: 0;
-  padding-top: 14px;
-}
-
-.papers .rows {
-  background: none;
-  border: 0;
-  border-radius: 0;
-}
-
-.paper-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 12px 0;
-}
-
-.paper-main {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
   color: var(--ink);
 }
 
-.paper-main:hover .paper-exam {
+.slot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.slot + .slot {
+  margin-top: 6px;
+}
+
+.slot-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.slot-title {
+  font-weight: 800;
+}
+
+.slot-by {
+  font-size: var(--t-15);
+  color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.slot-paper:hover {
+  background: var(--tint);
+}
+
+.slot-paper:hover .slot-title {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-.paper-main .muted {
+.dl {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--mint);
+  color: var(--ink);
+}
+
+.slot-count {
+  color: var(--muted);
+  font-size: var(--t-15);
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.slot-waiting {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  background: var(--peach);
+  color: var(--ink-soft);
+}
+
+.slot-waiting .slot-title {
+  font-weight: 600;
+}
+
+.slot-missing {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  border: 1.5px dashed var(--dashed);
+  color: var(--muted);
+  font-size: var(--t-15);
+}
+
+.slot-missing:hover {
+  border-color: var(--lilac-focus);
+  color: var(--ink);
+}
+
+.slot-add {
+  font-weight: 800;
+  color: var(--ink);
+}
+
+@media (max-width: 600px) {
+  .exam-grid {
+    --year-col: 64px;
+  }
+  .exam-grid th,
+  .exam-grid td {
+    padding: 8px 6px;
+  }
+  .exam-grid .year-col {
+    padding-right: 10px;
+  }
+  .exam-grid tbody .year-col {
+    font-size: var(--t-18);
+  }
+  .slot {
+    gap: 8px;
+    padding: 8px;
+  }
+  /* icon on the left, "Download" over the count */
+  .slot-paper {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0 8px;
+  }
+  .slot-paper .dl {
+    grid-row: span 2;
+  }
+  .slot-paper .slot-count {
+    grid-column: 2;
+    font-size: var(--t-13);
+  }
+  .slot-paper .slot-by,
+  .slot-waiting .slot-by,
+  .count-word {
+    display: none;
+  }
+}
+
+.paper-exam {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .paper-exam {
@@ -978,7 +1122,20 @@ section + section {
   margin-top: 28px;
 }
 
-/* ---------- Search results ---------- */
+/* ---------- Search results: a coverage strip per course ---------- */
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 14px;
+  color: var(--ink-soft);
+}
+
+.legend .sq-mini + * {
+  margin-left: 0;
+}
 
 .results {
   list-style: none;
@@ -987,7 +1144,12 @@ section + section {
 }
 
 .result {
-  padding: 18px var(--row-pad) 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 28px;
+  padding: 18px var(--row-pad);
 }
 
 .result + .result {
@@ -995,9 +1157,11 @@ section + section {
 }
 
 .result-head {
-  display: inline-flex;
+  display: flex;
   align-items: baseline;
   gap: 16px;
+  min-width: min(100%, 18rem);
+  flex: 1 1 18rem;
   text-decoration: none;
   color: var(--ink);
 }
@@ -1006,17 +1170,89 @@ section + section {
   min-width: var(--code-col);
 }
 
+.result-name {
+  display: flex;
+  flex-direction: column;
+}
+
 .result-head:hover .row-title {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-.result-papers {
+.strip {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 10px;
-  padding-left: calc(var(--code-col) + 16px);
+  gap: 10px;
+}
+
+.strip-year {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.strip-pair {
+  display: flex;
+  gap: 4px;
+}
+
+.strip-label {
+  font-size: var(--t-13);
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.sq {
+  --sq: 32px;
+  display: grid;
+  place-items: center;
+  width: var(--sq);
+  height: var(--sq);
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: var(--t-15);
+  text-decoration: none;
+}
+
+.sq-have {
+  background: var(--mint);
+  border: 1px solid var(--mint-edge);
+  color: var(--ink);
+}
+
+.sq-have:hover {
+  border-color: var(--ink);
+}
+
+.sq-missing {
+  border: 1.5px dashed var(--dashed);
+  color: var(--muted);
+}
+
+.sq-missing:hover {
+  border-color: var(--lilac-focus);
+  color: var(--ink);
+}
+
+.sq-mini {
+  --sq: 22px;
+  display: inline-grid;
+  font-size: var(--t-13);
+}
+
+/* five years of squares must fit beside a phone's gutters */
+@media (max-width: 420px) {
+  .strip {
+    gap: 6px;
+  }
+  .strip-pair {
+    gap: 3px;
+  }
+  .sq:not(.sq-mini) {
+    --sq: 28px;
+  }
 }
 
 .chip {
