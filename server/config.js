@@ -18,13 +18,17 @@ export const config = {
     name: env.ADMIN_NAME || 'Site moderator',
     password: env.ADMIN_PASSWORD || 'admin12345',
   },
-  // Cloudflare R2 for the PDFs. Without it they are kept on local disk under dataDir/papers.
-  r2: env.R2_BUCKET
+  mongoUri: env.MONGODB_URI || 'mongodb://127.0.0.1:27017/pyqhub',
+  // S3-compatible storage for the PDFs (Filebase, Cloudflare R2, Backblaze B2...). Without it
+  // they are kept on local disk under dataDir/papers. The older R2_* names still work.
+  s3: (env.S3_BUCKET || env.R2_BUCKET)
     ? {
-        bucket: env.R2_BUCKET,
-        accessKeyId: env.R2_ACCESS_KEY_ID,
-        secretAccessKey: env.R2_SECRET_ACCESS_KEY,
-        endpoint: env.R2_ENDPOINT || `https://${env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,
+        bucket: env.S3_BUCKET || env.R2_BUCKET,
+        accessKeyId: env.S3_ACCESS_KEY_ID || env.R2_ACCESS_KEY_ID,
+        secretAccessKey: env.S3_SECRET_ACCESS_KEY || env.R2_SECRET_ACCESS_KEY,
+        endpoint:
+          env.S3_ENDPOINT || env.R2_ENDPOINT || (env.R2_ACCOUNT_ID && `https://${env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com`),
+        region: env.S3_REGION || 'auto',
       }
     : null,
   smtp: env.SMTP_HOST
@@ -42,8 +46,13 @@ if (config.isProd && config.jwtSecret === 'dev-only-secret-change-me') {
   throw new Error('JWT_SECRET must be set in production');
 }
 
-if (config.r2) {
-  const missing = ['R2_ACCESS_KEY_ID', 'R2_SECRET_ACCESS_KEY'].filter((k) => !env[k]);
-  if (!env.R2_ACCOUNT_ID && !env.R2_ENDPOINT) missing.push('R2_ACCOUNT_ID');
-  if (missing.length) throw new Error(`R2_BUCKET is set, so these are needed too: ${missing.join(', ')}`);
+if (config.s3) {
+  const missing = Object.entries({
+    S3_ACCESS_KEY_ID: config.s3.accessKeyId,
+    S3_SECRET_ACCESS_KEY: config.s3.secretAccessKey,
+    S3_ENDPOINT: config.s3.endpoint,
+  })
+    .filter(([, value]) => !value)
+    .map(([name]) => name);
+  if (missing.length) throw new Error(`S3_BUCKET is set, so these are needed too: ${missing.join(', ')}`);
 }

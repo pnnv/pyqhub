@@ -1,86 +1,112 @@
 import { Router } from 'express';
-import { db } from '../db.js';
+import { branches, countsBySubject, findPapers, papers, subjects } from '../db.js';
 import { HttpError } from '../auth.js';
 
 export const catalogRouter = Router();
 
-// Approved mid/end-sem papers and approved quizzes for course s.
-const counts = `
-  (SELECT COUNT(*) FROM papers p WHERE p.subject_id = s.id AND p.status = 'approved' AND p.exam_type <> 'quiz') AS papers,
-  (SELECT COUNT(*) FROM papers p WHERE p.subject_id = s.id AND p.status = 'approved' AND p.exam_type = 'quiz') AS quizzes`;
+const quiz = { $eq: ['$exam_type', 'quiz'] };
+const notQuiz = { $ne: ['$exam_type', 'quiz'] };
 
-catalogRouter.get('/branches', (_req, res) => {
-  const branches = db
-    .prepare(
-      `SELECT b.code, b.name,
-              (SELECT COUNT(*) FROM offerings o WHERE o.branch_code = b.code) AS subjects,
-              (SELECT COUNT(*) FROM papers p JOIN offerings o ON o.subject_id = p.subject_id
-                WHERE o.branch_code = b.code AND p.status = 'approved' AND p.exam_type <> 'quiz') AS papers,
-              (SELECT COUNT(*) FROM papers p JOIN offerings o ON o.subject_id = p.subject_id
-                WHERE o.branch_code = b.code AND p.status = 'approved' AND p.exam_type = 'quiz') AS quizzes
-         FROM branches b ORDER BY b.position, b.code`,
-    )
-    .all();
-  const totals = db
-    .prepare(
-      `SELECT (SELECT COUNT(*) FROM papers WHERE status = 'approved' AND exam_type <> 'quiz') AS papers,
-              (SELECT COUNT(*) FROM papers WHERE status = 'approved' AND exam_type = 'quiz') AS quizzes,
-              (SELECT COUNT(DISTINCT subject_id) FROM papers WHERE status = 'approved') AS subjects`,
-    )
-    .get();
-  res.json({ branches, totals });
+catalogRouter.get('/branches', async (_req, res) => {
+  const [list, courseCounts, paperCounts, totals, coursesWithPapers] = await Promise.all([
+    branches.find().sort({ position: 1, _id: 1 }).toArray(),
+    subjects.aggregate([{ $unwind: '$offerings' }, { $group: { _id: '$offerings.branch', n: { $sum: 1 } } }]).toArray(),
+    // A paper counts towards every branch that teaches its course.
+    papers
+      .aggregate([
+        { $match: { status: 'approved' } },
+        { $lookup: { from: 'subjects', localField: 'subject', foreignField: '_id', as: 's', pipeline: [{ $project: { b: '$offerings.branch' } }] } },
+        { $unwind: '$s' },
+        { $unwind: '$s.b' },
+        {
+          $group: {
+            _id: '$s.b',
+            papers: { $sum: { $cond: [notQuiz, 1, 0] } },
+            quizzes: { $sum: { $cond: [quiz, 1, 0] } },
+          },
+        },
+      ])
+      .toArray(),
+    papers
+      .aggregate([
+        { $match: { status: 'approved' } },
+        { $group: { _id: null, papers: { $sum: { $cond: [notQuiz, 1, 0] } }, quizzes: { $sum: { $cond: [quiz, 1, 0] } } } },
+      ])
+      .toArray(),
+    papers.distinct('subject', { status: 'approved' }),
+  ]);
+  const courses = Object.fromEntries(courseCounts.map((c) => [c._id, c.n]));
+  const counts = Object.fromEntries(paperCounts.map((c) => [c._id, c]));
+  res.json({
+    branches: list.map((b) => ({
+      code: b._id,
+      name: b.name,
+      subjects: courses[b._id] ?? 0,
+      papers: counts[b._id]?.papers ?? 0,
+      quizzes: counts[b._id]?.quizzes ?? 0,
+    })),
+    totals: { papers: totals[0]?.papers ?? 0, quizzes: totals[0]?.quizzes ?? 0, subjects: coursesWithPapers.length },
+  });
 });
 
-catalogRouter.get('/branches/:code', (req, res) => {
-  const branch = db.prepare('SELECT code, name FROM branches WHERE code = ?').get(req.params.code.toUpperCase());
+catalogRouter.get('/branches/:code', async (req, res) => {
+  const branch = await branches.findOne({ _id: req.params.code.toUpperCase() });
   if (!branch) throw new HttpError(404, 'No branch with that code.');
-  const subjects = db
-    .prepare(
-      `SELECT s.code, s.name, s.credits, o.semester, o.category, ${counts}
-         FROM offerings o JOIN subjects s ON s.id = o.subject_id
-        WHERE o.branch_code = ?
-        ORDER BY o.semester IS NULL, o.semester, s.code`,
-    )
-    .all(branch.code);
-  res.json({ branch, subjects });
+  const list = await subjects.find({ 'offerings.branch': branch._id }).toArray();
+  const counts = await countsBySubject(list.map((s) => s._id));
+  const rows = list
+    .map((s) => {
+      const o = s.offerings.find((x) => x.branch === branch._id);
+      return {
+        code: s._id,
+        name: s.name,
+        credits: s.credits ?? null,
+        semester: o.semester ?? null,
+        category: o.category,
+        papers: counts[s._id]?.papers ?? 0,
+        quizzes: counts[s._id]?.quizzes ?? 0,
+      };
+    })
+    // semesters in order, electives last
+    .sort((a, b) => (a.semester ?? 99) - (b.semester ?? 99) || a.code.localeCompare(b.code));
+  res.json({ branch: { code: branch._id, name: branch.name }, subjects: rows });
 });
 
 // Flat list for the course pickers.
-catalogRouter.get('/subjects', (_req, res) => {
-  const subjects = db.prepare('SELECT code, name FROM subjects ORDER BY code').all();
-  res.json({ subjects });
+catalogRouter.get('/subjects', async (_req, res) => {
+  const list = await subjects.find({}, { projection: { name: 1 } }).sort({ _id: 1 }).toArray();
+  res.json({ subjects: list.map((s) => ({ code: s._id, name: s.name })) });
 });
 
-catalogRouter.get('/subjects/:code', (req, res) => {
-  const subject = db
-    .prepare('SELECT id, code, name, ltp, credits FROM subjects WHERE code = ?')
-    .get(req.params.code.replace(/[\s-]+/g, '').toUpperCase());
+catalogRouter.get('/subjects/:code', async (req, res) => {
+  const subject = await subjects.findOne({ _id: req.params.code.replace(/[\s-]+/g, '').toUpperCase() });
   if (!subject) throw new HttpError(404, 'No course with that code.');
-  const offerings = db
-    .prepare(
-      `SELECT o.branch_code AS branch, b.name AS branch_name, o.semester, o.category
-         FROM offerings o JOIN branches b ON b.code = o.branch_code
-        WHERE o.subject_id = ?
-        ORDER BY o.semester IS NULL, b.position`,
-    )
-    .all(subject.id);
-  const papers = db
-    .prepare(
-      `SELECT p.id, p.exam_year, p.exam_type, p.quiz_label, p.held_on, p.file_size, p.note,
-              p.downloads, p.created_at, u.name AS uploader
-         FROM papers p LEFT JOIN users u ON u.id = p.uploader_id
-        WHERE p.subject_id = ? AND p.status = 'approved'
-        ORDER BY p.exam_year DESC, p.exam_type, p.held_on DESC, p.created_at DESC`,
-    )
-    .all(subject.id);
-  // Uploads awaiting review, so the course page can show the slot is taken.
-  const pending = db
-    .prepare(
-      `SELECT p.exam_year, p.exam_type, p.quiz_label, p.held_on, p.created_at, u.name AS uploader
-         FROM papers p LEFT JOIN users u ON u.id = p.uploader_id
-        WHERE p.subject_id = ? AND p.status = 'pending'`,
-    )
-    .all(subject.id);
-  delete subject.id;
-  res.json({ subject, offerings, papers, pending });
+  const branchList = await branches.find({ _id: { $in: subject.offerings.map((o) => o.branch) } }).toArray();
+  const branchById = Object.fromEntries(branchList.map((b) => [b._id, b]));
+  const offerings = subject.offerings
+    .filter((o) => branchById[o.branch])
+    .map((o) => ({ branch: o.branch, branch_name: branchById[o.branch].name, semester: o.semester ?? null, category: o.category }))
+    // core offerings first, then by the home-page order of branches
+    .sort((a, b) => (a.semester === null) - (b.semester === null) || branchById[a.branch].position - branchById[b.branch].position);
+
+  const [approved, pending] = await Promise.all([
+    findPapers({ subject: subject._id, status: 'approved' }, { sort: { exam_year: -1, exam_type: 1, held_on: -1, created_at: -1 } }),
+    // Uploads awaiting review, so the course page can show the slot is taken.
+    findPapers({ subject: subject._id, status: 'pending' }),
+  ]);
+  const publicFields = ({ id, exam_year, exam_type, quiz_label, held_on, file_size, note, downloads, created_at, uploader }) =>
+    ({ id, exam_year, exam_type, quiz_label, held_on, file_size, note, downloads, created_at, uploader });
+  res.json({
+    subject: { code: subject._id, name: subject.name, ltp: subject.ltp ?? null, credits: subject.credits ?? null },
+    offerings,
+    papers: approved.map(publicFields),
+    pending: pending.map(({ exam_year, exam_type, quiz_label, held_on, created_at, uploader }) => ({
+      exam_year,
+      exam_type,
+      quiz_label,
+      held_on,
+      created_at,
+      uploader,
+    })),
+  });
 });

@@ -2,11 +2,13 @@
 // Run once on an empty database: npm run seed:demo
 import crypto from 'node:crypto';
 import bcrypt from 'bcryptjs';
-import { db, tx } from './db.js';
+import { client, connectDb, events, papers, subjects as subjectsCollection, users } from './db.js';
 import { storage } from './storage.js';
 
-if (db.prepare('SELECT COUNT(*) AS n FROM papers').get().n > 0) {
+await connectDb();
+if (await papers.estimatedDocumentCount()) {
   console.log('Papers already exist; skipping demo seed.');
+  await client.close();
   process.exit(0);
 }
 
@@ -72,48 +74,52 @@ const students = [
   ['Farhan Ali', 'farhan.221it019@nitk.edu.in'],
 ];
 const hash = bcrypt.hashSync('student123', 10);
-const userIds = students.map(([name, email]) => {
-  const existing = db.prepare('SELECT id FROM users WHERE email = ?').get(email);
-  if (existing) return existing.id;
-  return Number(
-    db.prepare('INSERT INTO users (email, name, password_hash, verified) VALUES (?, ?, ?, 1)').run(email, name, hash)
-      .lastInsertRowid,
+const userIds = [];
+for (const [name, email] of students) {
+  const { value } = await users.findOneAndUpdate(
+    { email },
+    { $setOnInsert: { email, name, password_hash: hash, role: 'student', verified: true, banned: false, created_at: new Date() } },
+    { upsert: true, returnDocument: 'after', includeResultMetadata: true },
   );
-});
+  userIds.push(value._id);
+}
 
 // Each course with the earliest semester any programme teaches it in (null for electives).
-const subjects = db
-  .prepare(
-    `SELECT s.id, s.code, s.name, MIN(o.semester) AS semester
-       FROM subjects s JOIN offerings o ON o.subject_id = s.id
-      GROUP BY s.id`,
-  )
-  .all();
+const subjects = (await subjectsCollection.find({}, { projection: { name: 1, offerings: 1 } }).toArray()).map((s) => {
+  const semesters = s.offerings.map((o) => o.semester).filter((n) => typeof n === 'number');
+  return { code: s._id, name: s.name, semester: semesters.length ? Math.min(...semesters) : null };
+});
 const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const chance = (p) => Math.random() < p;
-const insert = db.prepare(
-  `INSERT INTO papers (subject_id, exam_year, exam_type, quiz_label, held_on, file_key, file_hash, file_size,
-                       original_name, uploader_id, status, reject_reason, views, downloads, created_at, reviewed_at)
-   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now', ?), datetime('now', ?))`,
-);
+const daysAgo = (days, seconds = 0) => new Date(Date.now() - days * 86400000 + seconds * 1000);
 
 async function addPaper(subject, year, type, status, { reason = null, label = null, heldOn = null, uploader = pick(userIds) } = {}) {
   // Uploads awaiting review are a different scan of the paper, so their bytes differ.
   const pdf = paperPdf(subject, year, type, { copy: status === 'approved' ? '' : ' (second copy)', label, heldOn });
   const key = await storage.save(pdf);
-  const age = `-${Math.floor(Math.random() * 60) + 1} days`;
+  const created = daysAgo(Math.floor(Math.random() * 60) + 1);
   const downloads = status === 'approved' ? Math.floor(Math.random() * (type === 'quiz' ? 60 : 180)) : 0;
   const fileLabel = type === 'quiz' ? (label ?? 'quiz').replace(/\s+/g, '') : `${type}sem`;
-  return Number(
-    insert.run(
-      subject.id, year, type, label, heldOn, key,
-      crypto.createHash('sha256').update(pdf).digest('hex'),
-      pdf.length, `${subject.code}_${fileLabel}_${year}.pdf`,
-      uploader, status, reason,
-      status === 'approved' ? downloads * 2 + Math.floor(Math.random() * 40) : 0,
-      downloads, age, status === 'pending' ? '+0 days' : age,
-    ).lastInsertRowid,
-  );
+  const { insertedId } = await papers.insertOne({
+    subject: subject.code,
+    exam_year: year,
+    exam_type: type,
+    quiz_label: label,
+    held_on: heldOn,
+    file_key: key,
+    file_hash: crypto.createHash('sha256').update(pdf).digest('hex'),
+    file_size: pdf.length,
+    original_name: `${subject.code}_${fileLabel}_${year}.pdf`,
+    note: null,
+    uploader_id: uploader,
+    status,
+    ...(reason ? { reject_reason: reason } : {}),
+    ...(status === 'pending' ? {} : { reviewed_at: created }),
+    views: status === 'approved' ? downloads * 2 + Math.floor(Math.random() * 40) : 0,
+    downloads,
+    created_at: created,
+  });
+  return insertedId;
 }
 
 // A plausible quiz date inside the course's semester, never after today.
@@ -165,33 +171,33 @@ await addPaper(rejectedOn, thisYear - 2, 'end', 'rejected', {
   reason: 'Pages 2 and 3 are missing. Re-upload the full paper.',
   uploader: userIds[0],
 });
-db.prepare("UPDATE papers SET reviewed_at = NULL WHERE status = 'pending'").run();
 
 // Activity log for the dashboard chart.
-const event = db.prepare(
-  `INSERT INTO events (type, paper_id, user_id, detail, created_at)
-   VALUES (?, ?, ?, ?, datetime('now', ?, ?))`,
-);
+const activity = [];
+const event = (type, paperId, userId, detail, created) => activity.push({ type, paper_id: paperId, user_id: userId, detail, created_at: created });
 const terms = ['cs252', 'operating systems', 'computer networks', 'ma111', 'cs301', 'dbms', 'thermodynamics', 'cs202', 'data structures'];
-tx(() => {
+{
   for (let day = 29; day >= 0; day--) {
     // Activity climbs toward exam week.
     const weight = 1 + (29 - day) / 10;
     const n = Math.floor((20 + Math.random() * 25) * weight);
     for (let i = 0; i < n; i++) {
       const type = chance(0.55) ? 'view' : chance(0.85) ? 'download' : 'search';
-      event.run(
+      // spread over the day, but never in the future
+      const when = new Date(Math.min(Date.now(), daysAgo(day).setUTCHours(0, 0, 0, 0) + Math.random() * 86400000));
+      event(
         type,
         type === 'search' ? null : pick(approvedIds),
         chance(0.5) ? pick(userIds) : null,
         type === 'search' ? pick(terms) : null,
-        `-${day} days`,
-        `+${Math.floor(Math.random() * 86400)} seconds`,
+        when,
       );
     }
-    if (chance(0.4)) event.run('upload', pick(approvedIds), pick(userIds), null, `-${day} days`, '+0 seconds');
+    if (chance(0.4)) event('upload', pick(approvedIds), pick(userIds), null, daysAgo(day));
   }
-});
+}
+await events.insertMany(activity);
 
 console.log(`Seeded ${approvedIds.length - quizCount} approved papers, ${quizCount} quizzes, ${pending.length} pending, 1 rejected.`);
 console.log('Demo students sign in with password student123, e.g. ananya.211cs107@nitk.edu.in');
+await client.close();

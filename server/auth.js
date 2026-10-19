@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { config } from './config.js';
-import { db } from './db.js';
+import { toId, users } from './db.js';
 
 const COOKIE = 'pyq_session';
 const MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
@@ -29,18 +29,21 @@ export function clearSession(res) {
 export const publicUser = (u) =>
   u && { id: u.id, email: u.email, name: u.name, role: u.role, verified: Boolean(u.verified) };
 
+// A user document with its id as a string, which is how the rest of the server compares ids.
+export const withId = (u) => u && { ...u, id: u._id.toHexString() };
+
 // Attaches req.user when a valid session cookie is present; never rejects.
-export function loadUser(req, _res, next) {
+export async function loadUser(req, _res, next) {
   const token = req.cookies?.[COOKIE];
-  if (token) {
-    try {
-      const { sub } = jwt.verify(token, config.jwtSecret);
-      const user = db.prepare('SELECT * FROM users WHERE id = ?').get(sub);
-      if (user && !user.banned) req.user = user;
-    } catch {
-      // expired or tampered token: treat as signed out
-    }
+  let sub = null;
+  try {
+    sub = token && jwt.verify(token, config.jwtSecret).sub;
+  } catch {
+    // expired or tampered token: treat as signed out
   }
+  const _id = toId(sub);
+  const user = _id && (await users.findOne({ _id }));
+  if (user && !user.banned) req.user = withId(user);
   next();
 }
 

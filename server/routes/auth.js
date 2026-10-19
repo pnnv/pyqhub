@@ -2,8 +2,8 @@ import crypto from 'node:crypto';
 import { Router } from 'express';
 import bcrypt from 'bcryptjs';
 import { config } from '../config.js';
-import { db, logEvent } from '../db.js';
-import { HttpError, clearSession, publicUser, requireUser, setSession } from '../auth.js';
+import { isDuplicateKey, logEvent, users } from '../db.js';
+import { HttpError, clearSession, publicUser, requireUser, setSession, withId } from '../auth.js';
 import { mailEnabled, sendVerificationEmail } from '../mail.js';
 
 export const authRouter = Router();
@@ -41,24 +41,34 @@ authRouter.post('/signup', limit, async (req, res) => {
     throw new HttpError(400, `Use your college email ending in @${config.emailDomain}.`);
   }
   if (password.length < 8) throw new HttpError(400, 'Password needs at least 8 characters.');
-  if (db.prepare('SELECT 1 FROM users WHERE email = ?').get(email)) {
-    throw new HttpError(409, 'An account with this email already exists. Sign in instead.');
+  const exists = new HttpError(409, 'An account with this email already exists. Sign in instead.');
+  if (await users.findOne({ email }, { projection: { _id: 1 } })) throw exists;
+
+  const doc = {
+    email,
+    name,
+    password_hash: await bcrypt.hash(password, 10),
+    role: 'student',
+    verified: false,
+    verify_token: newToken(),
+    banned: false,
+    created_at: new Date(),
+  };
+  try {
+    await users.insertOne(doc);
+  } catch (err) {
+    throw isDuplicateKey(err) ? exists : err; // two sign-ups with the same email at once
   }
+  const user = withId(doc);
 
-  const token = newToken();
-  const { lastInsertRowid } = db
-    .prepare('INSERT INTO users (email, name, password_hash, verify_token) VALUES (?, ?, ?, ?)')
-    .run(email, name, await bcrypt.hash(password, 10), token);
-  const user = db.prepare('SELECT * FROM users WHERE id = ?').get(lastInsertRowid);
-
-  logEvent('signup', { userId: user.id });
+  logEvent('signup', { userId: doc._id });
   setSession(res, user);
   res.status(201).json({ user: publicUser(user), ...(await sendVerification(user)) });
 });
 
 authRouter.post('/login', limit, async (req, res) => {
   const email = String(req.body.email ?? '').trim().toLowerCase();
-  const user = db.prepare('SELECT * FROM users WHERE email = ?').get(email);
+  const user = withId(await users.findOne({ email }));
   const ok = user && (await bcrypt.compare(String(req.body.password ?? ''), user.password_hash));
   if (!ok) throw new HttpError(401, 'Email or password is incorrect.');
   if (user.banned) throw new HttpError(403, 'This account has been suspended. Contact an admin.');
@@ -75,18 +85,23 @@ authRouter.get('/me', (req, res) => {
   res.json({ user: publicUser(req.user) ?? null, emailDomain: config.emailDomain });
 });
 
-authRouter.post('/verify', (req, res) => {
+authRouter.post('/verify', async (req, res) => {
   const token = String(req.body.token ?? '');
-  const user = token && db.prepare('SELECT * FROM users WHERE verify_token = ?').get(token);
+  const user =
+    token &&
+    (await users.findOneAndUpdate(
+      { verify_token: token },
+      { $set: { verified: true }, $unset: { verify_token: '' } },
+      { returnDocument: 'after' },
+    ));
   if (!user) throw new HttpError(400, 'This confirmation link is invalid or was already used.');
-  db.prepare('UPDATE users SET verified = 1, verify_token = NULL WHERE id = ?').run(user.id);
-  setSession(res, user);
-  res.json({ user: publicUser({ ...user, verified: 1 }) });
+  setSession(res, withId(user));
+  res.json({ user: publicUser(withId(user)) });
 });
 
 authRouter.post('/resend', requireUser, limit, async (req, res) => {
   if (req.user.verified) return res.json({ ok: true });
   const token = newToken();
-  db.prepare('UPDATE users SET verify_token = ? WHERE id = ?').run(token, req.user.id);
+  await users.updateOne({ _id: req.user._id }, { $set: { verify_token: token } });
   res.json({ ok: true, ...(await sendVerification({ ...req.user, verify_token: token })) });
 });

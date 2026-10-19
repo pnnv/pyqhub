@@ -285,7 +285,7 @@ async function queue() {
         } else if (act === 'approve' || act === 'replace') {
           button.disabled = true;
           try {
-            const replace = act === 'replace' ? button.dataset.replace.split(',').map(Number) : [];
+            const replace = act === 'replace' ? button.dataset.replace.split(',') : [];
             await api(`/admin/papers/${item.dataset.id}/approve`, { method: 'POST', body: { replace } });
             done(item, `Approved ${label(item)}${replace.length ? ', old copy replaced' : ''}`);
           } catch (err) {

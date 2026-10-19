@@ -65,12 +65,11 @@ export function fileSize(bytes) {
   return `${(bytes / 1024 / 1024).toFixed(1)} MB`;
 }
 
-// "2025-09-12 08:30:00" is UTC from SQLite; a bare "2025-09-12" is a calendar date.
-const toDate = (sqlTime) =>
-  /^\d{4}-\d{2}-\d{2}$/.test(sqlTime) ? new Date(`${sqlTime}T00:00:00`) : new Date(`${sqlTime.replace(' ', 'T')}Z`);
+// Timestamps arrive as ISO strings ("2026-10-19T10:39:04.000Z"); a bare "2025-09-12" is a calendar date.
+const toDate = (time) => (/^\d{4}-\d{2}-\d{2}$/.test(time) ? new Date(`${time}T00:00:00`) : new Date(time));
 
-export function timeAgo(sqlTime) {
-  const seconds = (toDate(sqlTime) - Date.now()) / 1000;
+export function timeAgo(time) {
+  const seconds = (toDate(time) - Date.now()) / 1000;
   const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
   const steps = [
     [60, 'second'],
@@ -88,8 +87,8 @@ export function timeAgo(sqlTime) {
   return rtf.format(Math.round(seconds / (86400 * 365)), 'year');
 }
 
-export const shortDate = (sqlTime) =>
-  toDate(sqlTime).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+export const shortDate = (time) =>
+  toDate(time).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
 
 // Wraps the part of `text` that matches `query` in <mark>. Returns escaped HTML.
 export function highlight(text, query) {

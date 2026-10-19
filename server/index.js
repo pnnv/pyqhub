@@ -3,7 +3,7 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import multer from 'multer';
 import { config } from './config.js';
-import './db.js';
+import { connectDb } from './db.js';
 import { HttpError, loadUser } from './auth.js';
 import { storage } from './storage.js';
 import { authRouter } from './routes/auth.js';
@@ -42,6 +42,13 @@ app.use((err, _req, res, _next) => {
   if (status >= 500) console.error(err);
   res.status(status).json({ error: status >= 500 ? 'Something went wrong on the server.' : err.message });
 });
+
+try {
+  await connectDb();
+} catch (err) {
+  console.error(`Can't connect to MongoDB (MONGODB_URI): ${err.message}`);
+  process.exit(1);
+}
 
 app.listen(config.port, () => {
   console.log(`PYQ Hub running at ${config.baseUrl}`);

@@ -1,4 +1,5 @@
-// Where uploaded PDFs live. Cloudflare R2 when R2_BUCKET is set, otherwise local disk.
+// Where uploaded PDFs live: an S3-compatible bucket (Filebase, Cloudflare R2, ...) when
+// S3_BUCKET is set, otherwise local disk.
 // Both drivers have the same calls, so nothing outside this file knows which one is in use.
 //
 // The database stores only the key ("<32 hex>.pdf"); the file itself is here.
@@ -39,9 +40,9 @@ function localDisk() {
   };
 }
 
-function cloudflareR2({ bucket, endpoint, accessKeyId, secretAccessKey }) {
+function s3Bucket({ bucket, endpoint, region, accessKeyId, secretAccessKey }) {
   const client = new S3Client({
-    region: 'auto',
+    region,
     endpoint,
     credentials: { accessKeyId, secretAccessKey },
     forcePathStyle: true,
@@ -49,7 +50,7 @@ function cloudflareR2({ bucket, endpoint, accessKeyId, secretAccessKey }) {
   const objectKey = (key) => `papers/${checkKey(key)}`;
 
   return {
-    name: `Cloudflare R2 bucket "${bucket}"`,
+    name: `bucket "${bucket}" at ${new URL(endpoint).host}`,
     async check() {
       await client.send(new HeadBucketCommand({ Bucket: bucket }));
     },
@@ -60,8 +61,8 @@ function cloudflareR2({ bucket, endpoint, accessKeyId, secretAccessKey }) {
       );
       return key;
     },
-    // Hands the browser a short-lived signed link, so PDFs download straight from R2
-    // (free egress) instead of through this server. Each request gets a fresh link.
+    // Hands the browser a short-lived signed link, so PDFs download straight from the bucket
+    // instead of through this server. Each request gets a fresh link.
     async deliver(key, options) {
       const url = await getSignedUrl(
         client,
@@ -81,4 +82,4 @@ function cloudflareR2({ bucket, endpoint, accessKeyId, secretAccessKey }) {
   };
 }
 
-export const storage = config.r2 ? cloudflareR2(config.r2) : localDisk();
+export const storage = config.s3 ? s3Bucket(config.s3) : localDisk();

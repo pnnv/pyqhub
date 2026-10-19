@@ -10,6 +10,7 @@ it goes live.
 - [Using PYQ Hub (students)](#using-pyq-hub-students)
 - [Running PYQ Hub (admins)](#running-pyq-hub-admins)
 - [Running it on your computer](#running-it-on-your-computer)
+- [Deploying (Render, MongoDB Atlas, Filebase)](#deploying-render-mongodb-atlas-filebase)
 
 ---
 
@@ -173,8 +174,9 @@ branch, enter just its code, the branch and the semester.
 
 ## Running it on your computer
 
-Needs **Node.js 22.13 or newer**. The database is Node's built-in SQLite, so there is
-nothing else to install.
+Needs **Node.js 22.13 or newer** and a **MongoDB** database. A free MongoDB Atlas (M0)
+cluster works; so does MongoDB installed on your computer. Copy `.env.example` to `.env`
+and set `MONGODB_URI` to your connection string.
 
 ```sh
 npm install
@@ -193,8 +195,27 @@ settings, verification links are printed in the terminal and shown on screen.
   <img src="docs/screenshots/mobile-search.png" alt="Search results on a phone" width="260">
 </p>
 
-Upgrading from an earlier version keeps your accounts and papers: the database migrates
-itself on start.
+### Where things are stored
+
+- **Accounts, courses and paper records:** MongoDB (`MONGODB_URI`).
+- **The PDFs themselves:** an S3-compatible bucket when the `S3_*` settings are set,
+  otherwise `data/papers/` on local disk. Filebase's free tier (5 GB, no card needed) works:
+  create a bucket and an access key in Filebase, then set `S3_BUCKET`, `S3_ACCESS_KEY_ID`
+  and `S3_SECRET_ACCESS_KEY` (the endpoint and region in `.env.example` are Filebase's).
+  On start the server logs which one it is using.
+- PDFs already on local disk can be copied into a newly set-up bucket with
+  `npm run storage:copy-to-bucket`; it is safe to run again.
+
+### Backups
+
+Atlas's free tier keeps no backups, so export the database now and then:
+
+```sh
+npm run db:export   # writes backups/<date>/<collection>.json
+```
+
+Each file can be restored with `mongoimport` (the command is at the top of
+`server/tools/export-db.js`).
 
 ### Updating the course list
 
@@ -207,3 +228,124 @@ labs, projects and seminars have no mid-sem or end-sem papers. For a new curricu
 pdftotext -layout UG_Curriculum_2025_v4.pdf curriculum.txt
 node server/tools/parse-curriculum.js curriculum.txt > server/curriculum-2025.json
 ```
+
+---
+
+## Deploying (Render, MongoDB Atlas, Filebase)
+
+The site runs on three free services, each doing one job:
+
+| Service | Holds | Free tier |
+|---|---|---|
+| **Render** | the website and API (one Node web service) | Sleeps after 15 minutes without visitors; the next visit takes about a minute to wake it |
+| **MongoDB Atlas** | accounts, courses and paper records | 512 MB, no backups (see [Backups](#backups)) |
+| **Filebase** | the PDFs | 5 GB, no card needed |
+
+Render keeps nothing on its own disk, so restarts and redeploys lose nothing. Vercel and
+Netlify don't suit this app: their functions reject requests over about 5 MB, which
+blocks most scanned papers.
+
+Set up Atlas and Filebase first; Render needs their details.
+
+### 1. MongoDB Atlas (the database)
+
+1. Sign up at [mongodb.com/atlas](https://www.mongodb.com/atlas) and create a **free (M0)**
+   cluster. Pick the region closest to where you'll run Render (for India, Mumbai).
+2. **Database Access → Add New Database User.** Choose password authentication, give it a
+   long generated password, and the role **Read and write to any database**. Save the
+   password somewhere safe.
+3. **Network Access → Add IP Address → Allow access from anywhere** (`0.0.0.0/0`). Render's
+   free tier has no fixed IP address, so the database password is what keeps it private.
+4. **Database → Connect → Drivers.** Copy the connection string. It looks like:
+   ```
+   mongodb+srv://pyqhub:<password>@cluster0.abcde.mongodb.net/?retryWrites=true&w=majority
+   ```
+   Put your password in place of `<password>`, and add the database name `pyqhub` after
+   the `/`:
+   ```
+   mongodb+srv://pyqhub:YOUR-PASSWORD@cluster0.abcde.mongodb.net/pyqhub?retryWrites=true&w=majority
+   ```
+   This is your `MONGODB_URI`. If the password has symbols like `@`, `:` or `/`, either
+   generate one without them or percent-encode them.
+
+You don't need to create collections or indexes: the app does that on its first start.
+
+### 2. Filebase (the PDFs)
+
+1. Sign up at [filebase.com](https://filebase.com) (the free plan needs no card).
+2. **Buckets → Create Bucket.** Choose **S3 compatible storage** (not IPFS), give it a
+   name such as `pyqhub-papers`, and keep it **private**. Bucket names are shared across
+   all Filebase users, so you may need a variation. This is your `S3_BUCKET`.
+3. **Access Keys.** Copy the **Key** and **Secret**: these are `S3_ACCESS_KEY_ID` and
+   `S3_SECRET_ACCESS_KEY`.
+
+The bucket stays private. The app hands visitors short-lived signed download links, so
+PDFs download straight from Filebase and pending papers are never exposed.
+
+### 3. Render (the website)
+
+1. Push this repository to GitHub, then sign up at [render.com](https://render.com) with
+   your GitHub account.
+2. **New → Web Service**, and pick the repository.
+3. Fill in:
+   - **Language:** Node
+   - **Branch:** `main`
+   - **Build command:** `npm ci`
+   - **Start command:** `npm start`
+   - **Instance type:** Free
+   - **Region:** the same area as your Atlas cluster (Singapore is closest to Mumbai)
+4. Under **Environment Variables**, add:
+
+   | Name | Value |
+   |---|---|
+   | `NODE_ENV` | `production` |
+   | `BASE_URL` | `https://<your-service-name>.onrender.com` (Render shows this address once the service is created; update it if it differs) |
+   | `JWT_SECRET` | a long random string, e.g. the output of `openssl rand -hex 32` |
+   | `MONGODB_URI` | the connection string from step 1 |
+   | `S3_BUCKET` | your Filebase bucket name |
+   | `S3_ENDPOINT` | `https://s3.filebase.com` |
+   | `S3_REGION` | `us-east-1` |
+   | `S3_ACCESS_KEY_ID` | Filebase key |
+   | `S3_SECRET_ACCESS_KEY` | Filebase secret |
+   | `ADMIN_EMAIL` | your `@nitk.edu.in` address |
+   | `ADMIN_NAME` | the name shown in the header, e.g. `Site moderator` |
+   | `ADMIN_PASSWORD` | a strong password |
+
+   Optional: `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM` to send real
+   verification emails (see `.env.example`). Don't set `PORT`; Render provides it.
+
+5. **Create Web Service.** Render builds and starts the app. In the **Logs** tab you should
+   see:
+   ```
+   Created admin account you@nitk.edu.in
+   PYQ Hub running at https://<your-service-name>.onrender.com
+   PDFs are stored in bucket "pyqhub-papers" at s3.filebase.com
+   ```
+   If it says `Can't connect to MongoDB`, check `MONGODB_URI` and Atlas's Network Access.
+   If it says `Can't reach bucket`, check the three `S3_*` keys and the bucket name.
+
+### 4. Check it works
+
+1. Open the site and sign in with `ADMIN_EMAIL` / `ADMIN_PASSWORD`.
+2. Upload a small PDF to any course, then approve it under **Admin → Review queue**.
+3. Open the course page and download it. The file should come from `s3.filebase.com`.
+4. In Filebase, the bucket should now hold the file under `papers/`.
+
+The admin account is created only on the very first start. Changing `ADMIN_PASSWORD`
+later does not change the existing account's password.
+
+### Email
+
+Without SMTP settings the site still works, but nobody can confirm their email, so
+students can't upload. Until SMTP is set up, the verification link appears in Render's
+logs; you can open it for a student, or connect any SMTP provider (Brevo, Mailgun, a
+Gmail app password) through the `SMTP_*` variables.
+
+### Updating the site
+
+Every push to `main` redeploys automatically. Accounts, papers and PDFs live in Atlas and
+Filebase, so redeploys and restarts lose nothing.
+
+To fill the live site with demo data for a trial (not for the real launch), run
+`npm run seed:demo` on your computer with the same `MONGODB_URI` and `S3_*` values in `.env`.
+
