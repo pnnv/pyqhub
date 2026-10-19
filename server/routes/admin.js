@@ -90,7 +90,9 @@ adminRouter.get('/users', (_req, res) => {
     .prepare(
       `SELECT u.id, u.email, u.name, u.role, u.verified, u.banned, u.created_at,
               (SELECT COUNT(*) FROM papers p WHERE p.uploader_id = u.id) AS uploads,
-              (SELECT COUNT(*) FROM papers p WHERE p.uploader_id = u.id AND p.status = 'approved') AS approved
+              (SELECT COUNT(*) FROM papers p WHERE p.uploader_id = u.id AND p.status = 'approved') AS approved,
+              (SELECT COUNT(*) FROM papers p WHERE p.uploader_id = u.id AND p.status = 'rejected') AS rejected,
+              (SELECT COUNT(*) FROM papers p WHERE p.uploader_id = u.id AND p.status = 'pending') AS pending
          FROM users u ORDER BY u.created_at DESC, u.id DESC`,
     )
     .all();

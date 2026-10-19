@@ -72,7 +72,7 @@ authRouter.post('/logout', (_req, res) => {
 });
 
 authRouter.get('/me', (req, res) => {
-  res.json({ user: publicUser(req.user) ?? null });
+  res.json({ user: publicUser(req.user) ?? null, emailDomain: config.emailDomain });
 });
 
 authRouter.post('/verify', (req, res) => {

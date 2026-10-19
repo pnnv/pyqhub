@@ -39,7 +39,10 @@ export async function uploadView({ query }) {
   }
 
   const subjects = await loadSubjects();
+  // Missing-paper slots link here with course, year and exam already chosen.
   const preset = subjects.find((s) => s.code === (query.get('course') ?? '').toUpperCase());
+  const presetYear = examYears().includes(Number(query.get('year'))) ? Number(query.get('year')) : null;
+  const presetExam = ['mid', 'end'].includes(query.get('exam')) ? query.get('exam') : null;
 
   return {
     title: 'Upload a paper',
@@ -61,14 +64,14 @@ export async function uploadView({ query }) {
             <label class="field"><span>Exam year</span>
               <select class="select" name="exam_year" required>
                 <option value="">Choose year</option>
-                ${examYears().map((y) => html`<option>${y}</option>`)}
+                ${examYears().map((y) => html`<option ${y === presetYear ? 'selected' : ''}>${y}</option>`)}
               </select>
             </label>
             <fieldset class="field">
               <legend class="field-label">Exam</legend>
               <div class="seg">
-                <label><input type="radio" name="exam_type" value="mid" required /><span>Mid-sem</span></label>
-                <label><input type="radio" name="exam_type" value="end" /><span>End-sem</span></label>
+                <label><input type="radio" name="exam_type" value="mid" required ${presetExam === 'mid' ? 'checked' : ''} /><span>Mid-sem</span></label>
+                <label><input type="radio" name="exam_type" value="end" ${presetExam === 'end' ? 'checked' : ''} /><span>End-sem</span></label>
               </div>
             </fieldset>
           </div>

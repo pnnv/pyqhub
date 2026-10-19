@@ -82,9 +82,12 @@ export function signupView({ query }) {
           <label class="field"><span>Full name</span>
             <input class="input" name="name" autocomplete="name" required />
           </label>
-          <label class="field"><span>College email</span>
-            <input class="input" name="email" type="email" autocomplete="email" required placeholder="name.rollno@nitk.edu.in" />
-          </label>
+          <div class="field">
+            <label for="signup-email" class="field-label">College email</label>
+            <input class="input" id="signup-email" name="email" type="email" autocomplete="email" required
+              placeholder="name.rollno@${session.emailDomain ?? 'nitk.edu.in'}" aria-describedby="signup-email-error" />
+            <p class="error field-error" id="signup-email-error"></p>
+          </div>
           <label class="field"><span>Password <span class="hint">at least 8 characters</span></span>
             <input class="input" name="password" type="password" autocomplete="new-password" minlength="8" required />
           </label>
@@ -97,8 +100,37 @@ export function signupView({ query }) {
       </div>
     `,
     mount(root) {
+      const email = root.querySelector('#signup-email');
+      const emailError = root.querySelector('#signup-email-error');
+      const domain = session.emailDomain ?? 'nitk.edu.in';
+      const showEmailError = (message) => {
+        emailError.textContent = message;
+        email.setAttribute('aria-invalid', message ? 'true' : 'false');
+      };
+      const checkEmail = () => {
+        const value = email.value.trim().toLowerCase();
+        const ok = !value || value.endsWith(`@${domain}`);
+        showEmailError(ok ? '' : `Use your college email ending in @${domain}.`);
+        return ok;
+      };
+      email.addEventListener('blur', checkEmail);
+      // clear the message as soon as the address becomes valid, without nagging mid-typing
+      email.addEventListener('input', () => email.getAttribute('aria-invalid') === 'true' && checkEmail());
+
       bindForm(root, async (data) => {
-        const { user, devVerifyLink } = await api('/auth/signup', { method: 'POST', body: data });
+        // email problems are shown under the field, so the form-level message stays empty
+        if (!checkEmail()) {
+          email.focus();
+          throw new Error('');
+        }
+        const { user, devVerifyLink } = await api('/auth/signup', { method: 'POST', body: data }).catch((err) => {
+          if (/email/i.test(err.message)) {
+            showEmailError(err.message);
+            email.focus();
+            throw new Error('');
+          }
+          throw err;
+        });
         session.user = user;
         renderMasthead();
         root.querySelector('#signup').innerHTML = verifyPanel(user.email, devVerifyLink).value;

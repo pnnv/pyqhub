@@ -203,13 +203,13 @@ async function queue() {
         ${papers.map(
           (p) => html`<li class="review" data-id="${p.id}">
             <div class="review-preview">
-              <iframe src="/api/papers/${p.id}/file#view=FitH&toolbar=0" title="Preview of ${p.subject_code} ${examLabel(p.exam_type)} ${p.exam_year}" loading="lazy"></iframe>
+              <iframe src="/api/papers/${p.id}/file#toolbar=0&navpanes=0&view=FitH" title="Preview of ${p.subject_code} ${examLabel(p.exam_type)} ${p.exam_year}" loading="lazy"></iframe>
             </div>
             <div class="review-body">
               <h2><a class="code" href="/course/${p.subject_code}">${p.subject_code}</a> ${examLabel(p.exam_type)} ${p.exam_year}</h2>
               <p class="muted">${p.subject_name}</p>
               <dl class="review-meta">
-                <dt>Uploaded by</dt><dd>${p.uploader ?? 'Deleted account'}${p.uploader_email ? html`<br /><span class="small muted">${p.uploader_email}</span>` : ''}</dd>
+                <dt>Uploaded by</dt><dd><span class="nowrap">${p.uploader ?? 'Deleted account'}</span>${p.uploader_email ? html`<br /><span class="small muted">${p.uploader_email}</span>` : ''}</dd>
                 <dt>When</dt><dd>${timeAgo(p.created_at)}</dd>
                 <dt>File</dt><dd>${p.original_name ?? 'PDF'}, ${fileSize(p.file_size)}</dd>
                 ${p.note ? html`<dt>Note</dt><dd>${p.note}</dd>` : ''}
@@ -246,6 +246,10 @@ async function queue() {
         )}
       </ol>`,
     mount(root) {
+      // Chrome's viewer paints a dark backdrop before the page; keep the paper showing until it loads.
+      root.querySelectorAll('.review-preview iframe').forEach((frame) =>
+        frame.addEventListener('load', () => frame.classList.add('loaded')),
+      );
       const done = (item, message) => {
         item.remove();
         session.pending = Math.max(0, (session.pending ?? 1) - 1);
@@ -337,7 +341,7 @@ async function papersTab(query) {
                 <div>
                   <a class="paper-exam" href="/paper/${p.id}">${p.subject_code} ${examLabel(p.exam_type)} ${p.exam_year}</a>
                   <p class="small muted">
-                    ${p.uploader ?? 'Deleted account'}, ${shortDate(p.created_at)}.
+                    <span class="nowrap">${p.uploader ?? 'Deleted account'}</span>, ${shortDate(p.created_at)}.
                     ${p.status === 'approved' ? `${plural(p.downloads, 'download')}, ${plural(p.views, 'view')}.` : ''}
                     ${p.reject_reason ? html`<span class="reject-reason">${p.reject_reason}</span>` : ''}
                   </p>
@@ -371,6 +375,19 @@ async function papersTab(query) {
 
 // ---------- People ----------
 
+const uploadSummary = (u) => {
+  if (!u.uploads) return 'None yet';
+  const parts = [`${u.approved} approved`];
+  if (u.rejected) parts.push(`${u.rejected} rejected`);
+  if (u.pending) parts.push(`${u.pending} waiting`);
+  return parts.join(', ');
+};
+
+const accessButton = (banned) =>
+  banned
+    ? html`<button class="link-quiet" data-act="restore">Restore</button>`
+    : html`<button class="link-danger" data-act="suspend">Suspend</button>`;
+
 async function people() {
   const { users } = await api('/admin/users');
   return {
@@ -383,7 +400,7 @@ async function people() {
               (u) => html`<tr data-id="${u.id}" class="${u.banned ? 'is-banned' : ''}">
                 <td><strong>${u.name}</strong>${u.verified ? '' : html`<br /><span class="small muted">Email not confirmed</span>`}</td>
                 <td class="small">${u.email}</td>
-                <td>${u.approved} of ${u.uploads}</td>
+                <td class="num nowrap">${uploadSummary(u)}</td>
                 <td class="small muted">${shortDate(u.created_at)}</td>
                 <td>
                   ${u.id === session.user.id
@@ -396,7 +413,7 @@ async function people() {
                 <td>
                   ${u.id === session.user.id
                     ? ''
-                    : html`<button class="btn btn-small btn-quiet" data-ban="${u.banned ? 0 : 1}">${u.banned ? 'Restore' : 'Suspend'}</button>`}
+                    : accessButton(u.banned)}
                 </td>
               </tr>`,
             )}
@@ -411,17 +428,29 @@ async function people() {
         await api(`/admin/users/${row.dataset.id}`, { method: 'PATCH', body: { role: e.target.value } });
         toast(`${row.querySelector('strong').textContent} is now ${e.target.value === 'admin' ? 'an admin' : 'a student'}`);
       });
+      // Suspending asks once more in place; restoring doesn't need to.
       table.addEventListener('click', async (e) => {
-        const button = e.target.closest('[data-ban]');
+        const button = e.target.closest('button[data-act]');
         if (!button) return;
         const row = button.closest('tr');
-        const banned = button.dataset.ban === '1';
+        const cell = button.closest('td');
         const name = row.querySelector('strong').textContent;
-        if (banned && !confirm(`Suspend ${name}? They won't be able to sign in or upload.`)) return;
+        const act = button.dataset.act;
+        if (act === 'suspend') {
+          cell.innerHTML = html`<span class="confirm">Suspend ${name}?
+            <button class="link-danger" data-act="suspend-yes">Suspend</button>
+            <button class="link-quiet" data-act="cancel">Cancel</button></span>`.value;
+          cell.querySelector('[data-act=cancel]').focus();
+          return;
+        }
+        if (act === 'cancel') {
+          cell.innerHTML = accessButton(false).value;
+          return;
+        }
+        const banned = act === 'suspend-yes';
         await api(`/admin/users/${row.dataset.id}`, { method: 'PATCH', body: { banned } });
         row.classList.toggle('is-banned', banned);
-        button.dataset.ban = banned ? '0' : '1';
-        button.textContent = banned ? 'Restore' : 'Suspend';
+        cell.innerHTML = accessButton(banned).value;
         toast(`${name} ${banned ? 'suspended' : 'restored'}`);
       });
     },

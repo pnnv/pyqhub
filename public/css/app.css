@@ -1342,7 +1342,8 @@ section + section {
   gap: 12px 20px;
 }
 
-.form-error:empty {
+.form-error:empty,
+.field-error:empty {
   display: none;
 }
 
@@ -1354,6 +1355,11 @@ section + section {
   top: calc(100% - 22px);
   left: 0;
   width: 100%;
+}
+
+#course-input {
+  font-family: var(--mono);
+  font-weight: 500;
 }
 
 .course-picked.ok {
@@ -1717,6 +1723,12 @@ section + section {
   height: 100%;
   border: 0;
   display: block;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.review-preview iframe.loaded {
+  opacity: 1;
 }
 
 .review-body {
@@ -1831,6 +1843,41 @@ section + section {
 
 .people tr.is-banned td {
   color: var(--muted);
+}
+
+/* text-only actions in tables */
+.link-danger,
+.link-quiet {
+  font: inherit;
+  font-size: var(--t-15);
+  font-weight: 600;
+  background: none;
+  border: 0;
+  padding: 6px 4px;
+  min-height: 34px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: transparent;
+}
+
+.link-danger {
+  color: var(--danger);
+}
+
+.link-quiet {
+  color: var(--ink-soft);
+}
+
+.link-danger:hover,
+.link-quiet:hover {
+  text-decoration-color: currentColor;
+}
+
+.confirm {
+  white-space: nowrap;
+  color: var(--ink);
 }
 
 .select-small {

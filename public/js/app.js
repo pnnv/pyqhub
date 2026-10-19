@@ -127,8 +127,9 @@ document.addEventListener('click', async (e) => {
 window.addEventListener('popstate', () => render());
 
 export async function refreshSession() {
-  const { user } = await api('/auth/me');
+  const { user, emailDomain } = await api('/auth/me');
   session.user = user;
+  session.emailDomain = emailDomain;
   if (user?.role === 'admin') {
     const { papers } = await api('/admin/queue');
     session.pending = papers.length;

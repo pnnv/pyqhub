@@ -246,7 +246,7 @@ export async function paperView({ params }) {
       <div class="margin">
         ${status}
         <div class="viewer">
-          <iframe src="${file}#view=FitH" title="${title} question paper"></iframe>
+          <iframe src="${file}#toolbar=0&navpanes=0&view=FitH" title="${title} question paper"></iframe>
         </div>
         <p class="small muted viewer-fallback">
           If the preview doesn't show on your phone, use <a href="${file}?download=1" download>Download PDF</a>.
