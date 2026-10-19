@@ -1,4 +1,4 @@
-import { api, examLabel, fileSize, html, plural, session, shortDate, timeAgo, toast } from '../lib.js';
+import { api, examLabel, paperTitle, fileSize, html, plural, session, shortDate, timeAgo, toast } from '../lib.js';
 import { navigate, renderMasthead } from '../app.js';
 import { stamp } from './upload.js';
 
@@ -51,6 +51,7 @@ async function overview() {
     body: html`
       <dl class="figures">
         <div><dt>Approved papers</dt><dd>${compact(s.totals.approved)}</dd></div>
+        <div><dt>Quizzes</dt><dd>${compact(s.totals.quizzes)}</dd></div>
         <div><dt>Waiting for review</dt><dd>${s.totals.pending ? html`<a href="/admin/queue">${s.totals.pending}</a>` : '0'}</dd></div>
         <div><dt>Downloads, all time</dt><dd>${compact(s.totals.downloads)}</dd></div>
         <div><dt>Accounts</dt><dd>${compact(s.totals.users)}</dd></div>
@@ -67,7 +68,7 @@ async function overview() {
           <h2 class="section-title">Most downloaded</h2>
           <ol class="rows ranked">
             ${s.topPapers.map(
-              (p) => html`<li><a href="/paper/${p.id}"><span><span class="code">${p.subject_code}</span> ${examLabel(p.exam_type)} ${p.exam_year}</span><span class="muted small">${plural(p.downloads, 'download')}</span></a></li>`,
+              (p) => html`<li><a href="/paper/${p.id}"><span><span class="code">${p.subject_code}</span> ${paperTitle(p)}</span><span class="muted small">${plural(p.downloads, 'download')}</span></a></li>`,
             )}
           </ol>
         </section>
@@ -97,11 +98,12 @@ async function overview() {
           </ul>
         </section>
         <section>
-          <h2 class="section-title">Courses with no papers</h2>
+          <h2 class="section-title">Core courses with no papers</h2>
           <p class="muted small" style="margin-bottom:12px">
-            ${plural(s.missingCount, 'course')} still have nothing. Ask seniors for these first.
+            ${plural(s.missingCount, 'core course')} still have no mid-sem or end-sem paper. Earliest semesters first;
+            ask seniors for these.
           </p>
-          <div class="result-papers" style="padding:0;margin:0">
+          <div class="chip-list">
             ${s.missing.map((c) => html`<a class="chip code" href="/course/${c.code}" title="${c.name}">${c.code}</a>`)}
           </div>
         </section>
@@ -203,10 +205,10 @@ async function queue() {
         ${papers.map(
           (p) => html`<li class="review" data-id="${p.id}">
             <div class="review-preview">
-              <iframe src="/api/papers/${p.id}/file#toolbar=0&navpanes=0&view=FitH" title="Preview of ${p.subject_code} ${examLabel(p.exam_type)} ${p.exam_year}" loading="lazy"></iframe>
+              <iframe src="/api/papers/${p.id}/file#toolbar=0&navpanes=0&view=FitH" title="Preview of ${p.subject_code} ${paperTitle(p)}" loading="lazy"></iframe>
             </div>
             <div class="review-body">
-              <h2><a class="code" href="/course/${p.subject_code}">${p.subject_code}</a> ${examLabel(p.exam_type)} ${p.exam_year}</h2>
+              <h2><a class="code" href="/course/${p.subject_code}">${p.subject_code}</a> ${paperTitle(p)}</h2>
               <p class="muted">${p.subject_name}</p>
               <dl class="review-meta">
                 <dt>Uploaded by</dt><dd><span class="nowrap">${p.uploader ?? 'Deleted account'}</span>${p.uploader_email ? html`<br /><span class="small muted">${p.uploader_email}</span>` : ''}</dd>
@@ -217,7 +219,7 @@ async function queue() {
               ${p.existing.length
                 ? html`<div class="notice warn small">
                     <p>
-                      ${p.subject_code} already has an approved ${examLabel(p.exam_type)} ${p.exam_year}
+                      ${p.subject_code} already has an approved ${paperTitle(p)}
                       (${p.existing.map((e, i) => html`${i ? ', ' : ''}<a href="/paper/${e.id}" target="_blank" rel="noopener">view copy</a>`)}).
                       Add this one alongside it, or replace the old copy if this scan is better.
                     </p>
@@ -339,7 +341,7 @@ async function papersTab(query) {
             ${papers.map(
               (p) => html`<li class="upload-row" data-id="${p.id}">
                 <div>
-                  <a class="paper-exam" href="/paper/${p.id}">${p.subject_code} ${examLabel(p.exam_type)} ${p.exam_year}</a>
+                  <a class="paper-exam" href="/paper/${p.id}">${p.subject_code} ${paperTitle(p)}</a>
                   <p class="small muted">
                     <span class="nowrap">${p.uploader ?? 'Deleted account'}</span>, ${shortDate(p.created_at)}.
                     ${p.status === 'approved' ? `${plural(p.downloads, 'download')}, ${plural(p.views, 'view')}.` : ''}
@@ -399,9 +401,9 @@ async function people() {
             ${users.map(
               (u) => html`<tr data-id="${u.id}" class="${u.banned ? 'is-banned' : ''}">
                 <td><strong>${u.name}</strong>${u.verified ? '' : html`<br /><span class="small muted">Email not confirmed</span>`}</td>
-                <td class="small">${u.email}</td>
+                <td class="small person-email">${u.email}</td>
                 <td class="num nowrap">${uploadSummary(u)}</td>
-                <td class="small muted">${shortDate(u.created_at)}</td>
+                <td class="small muted person-joined"><span class="joined-label">Joined </span>${shortDate(u.created_at)}</td>
                 <td>
                   ${u.id === session.user.id
                     ? html`<span class="small muted">You, admin</span>`
@@ -464,28 +466,29 @@ async function courses() {
   return {
     body: html`
       <h2 class="section-title">Add a course</h2>
-      <p class="muted" style="margin-bottom:20px;max-width:var(--measure)">
-        Students can only upload papers for courses listed here. Add electives and new courses as they come up.
+      <p class="muted courses-note">
+        Every lecture course in the 2025 curriculum is already listed. Add new electives here, or add an existing
+        course to another branch by entering its code.
       </p>
       <form class="stack-form" novalidate>
         <div class="field-row">
-          <label class="field"><span>Course code</span>
-            <input class="input" name="code" placeholder="CS355" required style="width:9rem" />
+          <label class="field field-code"><span>Course code</span>
+            <input class="input code" name="code" placeholder="CS355" required />
           </label>
-          <label class="field" style="flex:1;min-width:14rem"><span>Course name</span>
-            <input class="input" name="name" placeholder="Advanced Algorithms" required />
+          <label class="field field-grow"><span>Course name <span class="hint">not needed if it exists</span></span>
+            <input class="input" name="name" placeholder="Advanced Algorithms" />
           </label>
         </div>
         <div class="field-row">
-          <label class="field"><span>Branch</span>
-            <select class="select" name="branch">
-              <option value="">Common to all (first year)</option>
+          <label class="field field-grow"><span>Branch</span>
+            <select class="select" name="branch" required>
               ${branches.map((b) => html`<option value="${b.code}">${b.code} ${b.name}</option>`)}
             </select>
           </label>
-          <label class="field"><span>Year of study</span>
-            <select class="select" name="year">
-              ${[1, 2, 3, 4].map((y) => html`<option value="${y}" ${y === 3 ? 'selected' : ''}>${y}</option>`)}
+          <label class="field"><span>Semester</span>
+            <select class="select" name="semester">
+              <option value="">Elective</option>
+              ${[1, 2, 3, 4, 5, 6, 7, 8].map((n) => html`<option value="${n}">Semester ${n}</option>`)}
             </select>
           </label>
         </div>
@@ -500,7 +503,8 @@ async function courses() {
         error.textContent = '';
         try {
           const { subject } = await api('/admin/subjects', { method: 'POST', body: Object.fromEntries(new FormData(form)) });
-          toast(`Added ${subject.code} ${subject.name}`);
+          const where = `${subject.branch}, ${subject.semester ? `semester ${subject.semester}` : 'elective'}`;
+          toast(subject.added === 'course' ? `Added ${subject.code} ${subject.name} (${where})` : `${subject.code} is now also listed under ${where}`);
           form.elements.code.value = '';
           form.elements.name.value = '';
           form.elements.code.focus();

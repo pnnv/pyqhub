@@ -7,7 +7,7 @@ export const adminRouter = Router();
 adminRouter.use(requireAdmin);
 
 const paperSelect = `
-  SELECT p.id, p.subject_id, p.exam_year, p.exam_type, p.file_size, p.original_name, p.note,
+  SELECT p.id, p.subject_id, p.exam_year, p.exam_type, p.quiz_label, p.held_on, p.file_size, p.original_name, p.note,
          p.status, p.reject_reason, p.views, p.downloads, p.created_at, p.reviewed_at,
          s.code AS subject_code, s.name AS subject_name, u.name AS uploader, u.email AS uploader_email
     FROM papers p
@@ -23,13 +23,21 @@ const getPaper = (id) => {
 adminRouter.get('/queue', (_req, res) => {
   const pending = db.prepare(`${paperSelect} WHERE p.status = 'pending' ORDER BY p.created_at, p.id`).all();
   // Approved papers for the same course, year and exam: likely the same paper again.
+  // Quizzes have no fixed slot, so only one with the same name in the same year counts.
   const sameSlot = db.prepare(
     `SELECT id, created_at, downloads FROM papers
       WHERE subject_id = ? AND exam_year = ? AND exam_type = ? AND status = 'approved'`,
   );
-  res.json({
-    papers: pending.map((p) => ({ ...p, existing: sameSlot.all(p.subject_id, p.exam_year, p.exam_type) })),
-  });
+  const sameQuiz = db.prepare(
+    `SELECT id, created_at, downloads FROM papers
+      WHERE subject_id = ? AND exam_year = ? AND exam_type = 'quiz' AND status = 'approved'
+        AND lower(quiz_label) = lower(?)`,
+  );
+  const existing = (p) =>
+    p.exam_type !== 'quiz'
+      ? sameSlot.all(p.subject_id, p.exam_year, p.exam_type)
+      : p.quiz_label ? sameQuiz.all(p.subject_id, p.exam_year, p.quiz_label) : [];
+  res.json({ papers: pending.map((p) => ({ ...p, existing: existing(p) })) });
 });
 
 adminRouter.post('/papers/:id/approve', (req, res) => {
@@ -44,9 +52,12 @@ adminRouter.post('/papers/:id/approve', (req, res) => {
     ).run(req.user.id, paper.id);
     const supersede = db.prepare(
       `UPDATE papers SET status = 'superseded' WHERE id = ? AND status = 'approved'
-          AND subject_id = ? AND exam_year = ? AND exam_type = ?`,
+          AND subject_id = ? AND exam_year = ? AND exam_type = ?
+          AND (exam_type <> 'quiz' OR lower(quiz_label) = lower(?))`,
     );
-    for (const id of replaceIds) supersede.run(id, paper.subject_id, paper.exam_year, paper.exam_type);
+    for (const id of replaceIds) {
+      supersede.run(id, paper.subject_id, paper.exam_year, paper.exam_type, paper.quiz_label ?? '');
+    }
   });
   res.json({ paper: getPaper(paper.id) });
 });
@@ -114,28 +125,38 @@ adminRouter.patch('/users/:id', (req, res) => {
   res.json({ ok: true });
 });
 
+// Adds a course to a programme. The course is created if it's new; an existing course
+// (say, one shared with another programme) just gains the offering.
 adminRouter.post('/subjects', (req, res) => {
   const code = String(req.body.code ?? '').replace(/[\s-]+/g, '').toUpperCase();
   const name = String(req.body.name ?? '').trim();
-  const branch = req.body.branch ? String(req.body.branch).toUpperCase() : null;
-  const year = Number(req.body.year);
-  if (!/^[A-Z]{2,4}\d{3}$/.test(code)) throw new HttpError(400, 'Course code looks like CS301: letters then three digits.');
-  if (!name) throw new HttpError(400, 'Enter the course name.');
-  if (![1, 2, 3, 4].includes(year)) throw new HttpError(400, 'Year of study must be 1 to 4.');
-  if (branch && !db.prepare('SELECT 1 FROM branches WHERE code = ?').get(branch)) {
-    throw new HttpError(400, 'Unknown branch.');
+  const branch = String(req.body.branch ?? '').toUpperCase();
+  const semester = req.body.semester ? Number(req.body.semester) : null;
+  if (!/^[A-Z]{2,4}\d{3}[A-Z]?$/.test(code)) throw new HttpError(400, 'Course code looks like CS301: letters then three digits.');
+  if (!db.prepare('SELECT 1 FROM branches WHERE code = ?').get(branch)) throw new HttpError(400, 'Choose a branch.');
+  if (semester !== null && !(Number.isInteger(semester) && semester >= 1 && semester <= 8)) {
+    throw new HttpError(400, 'Semester must be 1 to 8, or Elective.');
   }
-  if (db.prepare('SELECT 1 FROM subjects WHERE code = ?').get(code)) {
-    throw new HttpError(409, `${code} already exists.`);
+  const existing = db.prepare('SELECT id, name FROM subjects WHERE code = ?').get(code);
+  if (!existing && !name) throw new HttpError(400, 'Enter the course name.');
+  if (existing && db.prepare('SELECT 1 FROM offerings WHERE subject_id = ? AND branch_code = ?').get(existing.id, branch)) {
+    throw new HttpError(409, `${code} is already listed under ${branch}.`);
   }
-  db.prepare('INSERT INTO subjects (code, name, branch_code, year) VALUES (?, ?, ?, ?)').run(code, name, branch, year);
-  res.status(201).json({ subject: { code, name, branch, year } });
+  const subject = tx(() => {
+    const id = existing?.id ?? Number(db.prepare('INSERT INTO subjects (code, name) VALUES (?, ?)').run(code, name).lastInsertRowid);
+    db.prepare(
+      `INSERT INTO offerings (subject_id, branch_code, semester, category, source) VALUES (?, ?, ?, ?, 'admin')`,
+    ).run(id, branch, semester, semester ? 'PC' : 'PSE');
+    return { code, name: existing?.name ?? name, branch, semester, added: existing ? 'offering' : 'course' };
+  });
+  res.status(201).json({ subject });
 });
 
 adminRouter.get('/stats', (_req, res) => {
   const totals = db
     .prepare(
-      `SELECT (SELECT COUNT(*) FROM papers WHERE status = 'approved') AS approved,
+      `SELECT (SELECT COUNT(*) FROM papers WHERE status = 'approved' AND exam_type <> 'quiz') AS approved,
+              (SELECT COUNT(*) FROM papers WHERE status = 'approved' AND exam_type = 'quiz') AS quizzes,
               (SELECT COUNT(*) FROM papers WHERE status = 'pending') AS pending,
               (SELECT COUNT(*) FROM users) AS users,
               (SELECT COUNT(DISTINCT uploader_id) FROM papers WHERE status = 'approved') AS contributors,
@@ -156,7 +177,8 @@ adminRouter.get('/stats', (_req, res) => {
 
   const topPapers = db
     .prepare(
-      `SELECT p.id, s.code AS subject_code, s.name AS subject_name, p.exam_year, p.exam_type, p.downloads, p.views
+      `SELECT p.id, s.code AS subject_code, s.name AS subject_name, p.exam_year, p.exam_type, p.quiz_label,
+              p.downloads, p.views
          FROM papers p JOIN subjects s ON s.id = p.subject_id
         WHERE p.status = 'approved' ORDER BY p.downloads DESC, p.views DESC LIMIT 8`,
     )
@@ -170,26 +192,28 @@ adminRouter.get('/stats', (_req, res) => {
     )
     .all();
 
+  // A paper counts towards every branch that teaches its course.
   const byBranch = db
     .prepare(
-      `SELECT COALESCE(s.branch_code, 'Common') AS branch, COUNT(*) AS papers
-         FROM papers p JOIN subjects s ON s.id = p.subject_id
-        WHERE p.status = 'approved' GROUP BY branch ORDER BY papers DESC`,
+      `SELECT o.branch_code AS branch, COUNT(*) AS papers
+         FROM papers p JOIN offerings o ON o.subject_id = p.subject_id
+        WHERE p.status = 'approved' AND p.exam_type <> 'quiz'
+        GROUP BY o.branch_code ORDER BY papers DESC`,
     )
     .all();
 
-  // Courses with no approved paper yet: where to ask seniors for uploads.
-  const missingCount = db
-    .prepare(
-      `SELECT COUNT(*) AS n FROM subjects s
-        WHERE NOT EXISTS (SELECT 1 FROM papers p WHERE p.subject_id = s.id AND p.status = 'approved')`,
-    )
-    .get().n;
+  // Core courses with no mid/end-sem paper yet, earliest semester first: where to ask seniors.
+  const noPapers = `
+    FROM subjects s
+   WHERE EXISTS (SELECT 1 FROM offerings o WHERE o.subject_id = s.id AND o.semester IS NOT NULL)
+     AND NOT EXISTS (SELECT 1 FROM papers p WHERE p.subject_id = s.id AND p.status = 'approved' AND p.exam_type <> 'quiz')`;
+  const missingCount = db.prepare(`SELECT COUNT(*) AS n ${noPapers}`).get().n;
   const missing = db
     .prepare(
-      `SELECT s.code, s.name, s.branch_code AS branch FROM subjects s
-        WHERE NOT EXISTS (SELECT 1 FROM papers p WHERE p.subject_id = s.id AND p.status = 'approved')
-        ORDER BY s.year, s.code LIMIT 12`,
+      `SELECT s.code, s.name,
+              (SELECT MIN(o.semester) FROM offerings o WHERE o.subject_id = s.id) AS semester
+         ${noPapers}
+        ORDER BY semester, s.code LIMIT 12`,
     )
     .all();
 

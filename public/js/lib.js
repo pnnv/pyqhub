@@ -46,9 +46,17 @@ export const session = { user: null };
 
 // ---------- Formatting ----------
 
-export const examLabel = (type) => (type === 'mid' ? 'Mid-sem' : 'End-sem');
+export const examLabel = (type) => ({ mid: 'Mid-sem', end: 'End-sem', quiz: 'Quiz' })[type];
+
+// "End-sem 2025"; quizzes go by their own name: "Quiz 2, 2025".
+export const paperTitle = (p) =>
+  p.exam_type === 'quiz' ? `${p.quiz_label || 'Quiz'}, ${p.exam_year}` : `${examLabel(p.exam_type)} ${p.exam_year}`;
 
 export const yearLabel = (n) => `${n}${['st', 'nd', 'rd', 'th'][Math.min(n, 4) - 1]} year`;
+
+// "12 Sept" from "2025-09-12"
+export const dayMonth = (iso) =>
+  new Date(`${iso}T00:00:00`).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
 
 export const plural = (n, one, many = `${one}s`) => `${n.toLocaleString('en-IN')} ${n === 1 ? one : many}`;
 
@@ -57,7 +65,9 @@ export function fileSize(bytes) {
   return `${(bytes / 1024 / 1024).toFixed(1)} MB`;
 }
 
-const toDate = (sqlTime) => new Date(`${sqlTime.replace(' ', 'T')}Z`);
+// "2025-09-12 08:30:00" is UTC from SQLite; a bare "2025-09-12" is a calendar date.
+const toDate = (sqlTime) =>
+  /^\d{4}-\d{2}-\d{2}$/.test(sqlTime) ? new Date(`${sqlTime}T00:00:00`) : new Date(`${sqlTime.replace(' ', 'T')}Z`);
 
 export function timeAgo(sqlTime) {
   const seconds = (toDate(sqlTime) - Date.now()) / 1000;

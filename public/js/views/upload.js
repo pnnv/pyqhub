@@ -1,4 +1,4 @@
-import { api, examLabel, examYears, fileSize, html, session, shortDate, timeAgo } from '../lib.js';
+import { api, examLabel, paperTitle, examYears, fileSize, html, session, shortDate, timeAgo } from '../lib.js';
 import { attachCourseSuggest, loadSubjects } from '../suggest.js';
 import { verifyPanel } from './account.js';
 
@@ -42,14 +42,15 @@ export async function uploadView({ query }) {
   // Missing-paper slots link here with course, year and exam already chosen.
   const preset = subjects.find((s) => s.code === (query.get('course') ?? '').toUpperCase());
   const presetYear = examYears().includes(Number(query.get('year'))) ? Number(query.get('year')) : null;
-  const presetExam = ['mid', 'end'].includes(query.get('exam')) ? query.get('exam') : null;
+  const presetExam = ['mid', 'end', 'quiz'].includes(query.get('exam')) ? query.get('exam') : null;
+  const today = new Date().toISOString().slice(0, 10);
 
   return {
     title: 'Upload a paper',
     body: html`
       <div class="margin page-head">
         <h1>Upload a paper</h1>
-        <p class="lede">One PDF per exam. An admin checks it for the right course, year and all pages, then it goes up for everyone.</p>
+        <p class="lede">One PDF per exam or quiz. An admin checks it for the right course, year and all pages, then it goes up for everyone.</p>
       </div>
       <div class="margin" id="upload">
         <form class="stack-form upload-form" novalidate>
@@ -72,8 +73,18 @@ export async function uploadView({ query }) {
               <div class="seg">
                 <label><input type="radio" name="exam_type" value="mid" required ${presetExam === 'mid' ? 'checked' : ''} /><span>Mid-sem</span></label>
                 <label><input type="radio" name="exam_type" value="end" ${presetExam === 'end' ? 'checked' : ''} /><span>End-sem</span></label>
+                <label><input type="radio" name="exam_type" value="quiz" ${presetExam === 'quiz' ? 'checked' : ''} /><span>Quiz</span></label>
               </div>
             </fieldset>
+          </div>
+
+          <div class="field-row quiz-fields" ${presetExam === 'quiz' ? '' : 'hidden'}>
+            <label class="field field-grow"><span>Which quiz <span class="hint">optional</span></span>
+              <input class="input" name="quiz_label" maxlength="40" placeholder="Quiz 2, or Surprise quiz" />
+            </label>
+            <label class="field"><span>Date held <span class="hint">optional</span></span>
+              <input class="input" type="date" name="held_on" max="${today}" />
+            </label>
           </div>
 
           <div class="field">
@@ -120,6 +131,13 @@ export async function uploadView({ query }) {
       courseInput.addEventListener('input', describeCourse);
       describeCourse();
 
+      // Quiz name and date only make sense for quizzes.
+      const quizFields = root.querySelector('.quiz-fields');
+      form.addEventListener('change', (e) => {
+        if (e.target.name !== 'exam_type') return;
+        quizFields.hidden = e.target.value !== 'quiz';
+      });
+
       const showFile = () => {
         const file = fileInput.files[0];
         drop.classList.toggle('has-file', Boolean(file));
@@ -144,12 +162,16 @@ export async function uploadView({ query }) {
         e.preventDefault();
         error.textContent = '';
         const file = fileInput.files[0];
+        const isQuiz = form.elements.exam_type.value === 'quiz';
+        const heldOn = form.elements.held_on.value;
         const problem = !describeCourse()
           ? 'Pick the course from the list.'
           : !form.elements.exam_year.value
             ? 'Choose the exam year.'
             : !form.querySelector('[name=exam_type]:checked')
-              ? 'Choose mid-sem or end-sem.'
+              ? 'Choose mid-sem, end-sem or quiz.'
+              : isQuiz && heldOn && heldOn.slice(0, 4) !== form.elements.exam_year.value
+                ? `The quiz date is in ${heldOn.slice(0, 4)} but the exam year is ${form.elements.exam_year.value}.`
               : !file
                 ? 'Attach the question paper PDF.'
                 : !/\.pdf$/i.test(file.name) && file.type !== 'application/pdf'
@@ -175,6 +197,10 @@ function send(root, form) {
   const error = root.querySelector('.form-error');
   const data = new FormData(form);
   data.set('subject', form.elements.subject.value.replace(/[\s-]+/g, '').toUpperCase());
+  if (data.get('exam_type') !== 'quiz') {
+    data.delete('quiz_label');
+    data.delete('held_on');
+  }
 
   button.disabled = true;
   button.textContent = 'Uploading…';
@@ -196,7 +222,7 @@ function send(root, form) {
       root.querySelector('#upload').innerHTML = html`
         <div class="notice">
           <p><strong>Sent for review.</strong></p>
-          <p>${p.subject_code} ${p.subject_name}, ${examLabel(p.exam_type)} ${p.exam_year}. You'll see it marked approved under My uploads once an admin checks it.</p>
+          <p>${p.subject_code} ${p.subject_name}, ${paperTitle(p)}. You'll see it marked approved under My uploads once an admin checks it.</p>
         </div>
         <p class="form-actions" style="margin-top:20px">
           <a class="btn" href="/upload">Upload another</a>
@@ -250,7 +276,7 @@ export async function myUploadsView() {
               ${papers.map(
                 (p) => html`<li class="upload-row">
                   <div>
-                    <a class="paper-exam" href="/paper/${p.id}">${p.subject_code} ${examLabel(p.exam_type)} ${p.exam_year}</a>
+                    <a class="paper-exam" href="/paper/${p.id}">${p.subject_code} ${paperTitle(p)}</a>
                     <p class="small muted">${p.subject_name}. Uploaded ${timeAgo(p.created_at)}, ${shortDate(p.created_at)}.</p>
                     ${p.status === 'rejected' ? html`<p class="small reject-reason">${p.reject_reason}</p>` : ''}
                   </div>

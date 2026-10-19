@@ -1,0 +1,9311 @@
+{
+ "source": "NITK UG Curriculum 2025 (v4)",
+ "programmes": [
+  {
+   "code": "CH",
+   "name": "Chemical Engineering"
+  },
+  {
+   "code": "CV",
+   "name": "Civil Engineering"
+  },
+  {
+   "code": "CS",
+   "name": "Computer Science and Engineering"
+  },
+  {
+   "code": "EE",
+   "name": "Electrical and Electronics Engineering"
+  },
+  {
+   "code": "EC",
+   "name": "Electronics and Communication Engineering"
+  },
+  {
+   "code": "IT",
+   "name": "Information Technology"
+  },
+  {
+   "code": "AI",
+   "name": "Artificial Intelligence"
+  },
+  {
+   "code": "CDS",
+   "name": "Computational and Data Science"
+  },
+  {
+   "code": "ME",
+   "name": "Mechanical Engineering"
+  },
+  {
+   "code": "MT",
+   "name": "Metallurgical and Materials Engineering"
+  },
+  {
+   "code": "MN",
+   "name": "Mining Engineering"
+  }
+ ],
+ "subjects": [
+  {
+   "code": "CH150",
+   "name": "Process Calculations",
+   "ltp": "2-2-0",
+   "credits": 4
+  },
+  {
+   "code": "CH200",
+   "name": "Momentum Transfer",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CH201",
+   "name": "Particulate Technology",
+   "ltp": "2-1-0",
+   "credits": 3
+  },
+  {
+   "code": "CH202",
+   "name": "Chemical Engineering Thermodynamics",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CH203",
+   "name": "Transport Phenomena",
+   "ltp": "2-2-0",
+   "credits": 4
+  },
+  {
+   "code": "CH250",
+   "name": "Heat Transfer",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CH251",
+   "name": "Mass Transfer-I",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CH252",
+   "name": "Chemical Reaction Engineering–I",
+   "ltp": "2-1-0",
+   "credits": 3
+  },
+  {
+   "code": "CH300",
+   "name": "Chemical Reaction Engineering – II",
+   "ltp": "2-1-0",
+   "credits": 3
+  },
+  {
+   "code": "CH301",
+   "name": "Mass Transfer – II",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CH302",
+   "name": "Process Dynamics & Control",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CH350",
+   "name": "Chemical Process Industries",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CH351",
+   "name": "Process Design of Chemical Equipment",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CH400",
+   "name": "Pollution Control and Safety in Process Industries",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CH450",
+   "name": "Process Instrumentation",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CH451",
+   "name": "Energy Technology",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CH452",
+   "name": "Petroleum Refining Processes",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CH453",
+   "name": "Biochemical Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CH454",
+   "name": "Introduction to Molecular Simulations",
+   "ltp": "2-0-2",
+   "credits": 3
+  },
+  {
+   "code": "CH455",
+   "name": "Energy Conservation & Management In Process Industries",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CH456",
+   "name": "Fuel Cell Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CH457",
+   "name": "Chemical Project Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CH458",
+   "name": "Biology for Chemical Engineers",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CS100",
+   "name": "Python Programming",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CS110",
+   "name": "C Programming",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CS112",
+   "name": "Discrete Mathematical Structures",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS200",
+   "name": "Theory of Computation",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS201",
+   "name": "Design of Digital Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS202",
+   "name": "Data Structures and Algorithms",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS251",
+   "name": "Database Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS252",
+   "name": "Operating Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS253",
+   "name": "Design and Analysis of Algorithms",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS255",
+   "name": "Data Communication",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS256",
+   "name": "Computer Organization and Architecture",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS301",
+   "name": "Computer Networks",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS303",
+   "name": "Compiler Design",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS305",
+   "name": "Software Engineering",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS311",
+   "name": "Cryptography and Applications",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS312",
+   "name": "Machine Learning",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "CS314",
+   "name": "Data Structures for Advanced Applications",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS315",
+   "name": "Graph Theory",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS316",
+   "name": "System Programming",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS317",
+   "name": "Big Data Analytics",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS318",
+   "name": "Network Management",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS319",
+   "name": "Microprocessor Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS320",
+   "name": "Artificial Intelligence",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS321",
+   "name": "Full Stack Development",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS322",
+   "name": "Graph Drawing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS346",
+   "name": "Computing in Autonomous vehicles",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS351",
+   "name": "Management Information Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS352",
+   "name": "Soft Computing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS353",
+   "name": "Computer Graphics",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS354",
+   "name": "Object Oriented Programming",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS355",
+   "name": "Computing with FPGAs",
+   "ltp": "2-0-3",
+   "credits": 4
+  },
+  {
+   "code": "CS356",
+   "name": "Advanced Data Structures",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS357",
+   "name": "Digital Image Processing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS358",
+   "name": "Digital Systems Testing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS359",
+   "name": "Advanced Computer Networks",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS360",
+   "name": "Modern Formal Methods and Applications",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS361",
+   "name": "Quantum Computing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS362",
+   "name": "Distributed Computing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS363",
+   "name": "Cloud Computing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS364",
+   "name": "Distributed Operating Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS365",
+   "name": "Service Oriented Computing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS366",
+   "name": "Internet of Things",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS367",
+   "name": "Foundations of Cyber-Physical Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS368",
+   "name": "Security Engineering",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS369",
+   "name": "Approximation Algorithms",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS370",
+   "name": "Parameterized Algorithms",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS371",
+   "name": "Computational Complexity",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS372",
+   "name": "Randomized Algorithms",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS373",
+   "name": "Combinatorial Optimization",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS410",
+   "name": "Simulation and Modeling",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS411",
+   "name": "Software Testing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS412",
+   "name": "Cyber-Physical Systems Verification",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS413",
+   "name": "Reversible Computing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS414",
+   "name": "Web Engineering",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS415",
+   "name": "Computational Cyber-Physical Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS416",
+   "name": "Data Warehousing and Mining",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS417",
+   "name": "Parallel Programming",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS418",
+   "name": "Topics in Information Security",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS419",
+   "name": "Algorithmic Graph Theory",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS420",
+   "name": "Autonomous Vehicles",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS421",
+   "name": "Computational Geometry",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS422",
+   "name": "Deep Learning",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS423",
+   "name": "Computer Vision",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS424",
+   "name": "Speech Processing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS425",
+   "name": "Natural Language Processing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS426",
+   "name": "Reinforcement Learning",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS427",
+   "name": "Cloud Security",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS428",
+   "name": "Cloud Networking",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS429",
+   "name": "Storage Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS430",
+   "name": "Next Generation Multi-Cloud Architecture",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "CS431",
+   "name": "Digital Systems Verification",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS432",
+   "name": "Quantum Computer Architecture",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS433",
+   "name": "Wireless Networks",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS434",
+   "name": "Mobile Computing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS435",
+   "name": "Open Source Networking Technologies",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS460",
+   "name": "Cyber-Physical Systems and Applications",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS461",
+   "name": "Trustworthy Cyber-Physical Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS462",
+   "name": "High Performance Computing Paradigms",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS463",
+   "name": "Network Security",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS464",
+   "name": "Heterogeneous Parallel Computing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS465",
+   "name": "Distributed Database Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS466",
+   "name": "Social Network Analysis",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS467",
+   "name": "Information Storage Management",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS468",
+   "name": "Applications of Blockchain Technology",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS469",
+   "name": "Software Based Networks",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS470",
+   "name": "Database Security",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS471",
+   "name": "Information Centric Networking",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CS472",
+   "name": "Quantitative Computer Architecture",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CV100",
+   "name": "Civil Engineering Materials and Construction",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "CV110",
+   "name": "Environmental Sciences",
+   "ltp": "1-0-0",
+   "credits": 1
+  },
+  {
+   "code": "CV201",
+   "name": "Elements of Surveying",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV202",
+   "name": "Engineering Geology",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV203",
+   "name": "Mining Geology",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV251",
+   "name": "Design of RCC Structures",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV252",
+   "name": "Soil Mechanics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV253",
+   "name": "Structural Analysis",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV254",
+   "name": "Highway and Traffic Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV268",
+   "name": "Advanced Mining Geology",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV301",
+   "name": "Environmental Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV316",
+   "name": "Building Design and Drawing",
+   "ltp": "1-0-3",
+   "credits": 3
+  },
+  {
+   "code": "CV321",
+   "name": "Applied Soil Engineering Prereq: Cv 252",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV322",
+   "name": "Concrete Technology",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV323",
+   "name": "Architecture and Town Planning",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV324",
+   "name": "Analysis of Indeterminate Structures",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV325",
+   "name": "Structural Masonry and Alternative Building Technologies",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV326",
+   "name": "Disaster Management and Mitigation",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV351",
+   "name": "Design of Steel Structures",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV371",
+   "name": "Railways, Tunnels, Harbours and Airports",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV372",
+   "name": "Airportsof P.S.C Structures Design",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV373",
+   "name": "Probability Methods in Civil Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV374",
+   "name": "Engineering Transportation Systems Planning",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV375",
+   "name": "Rock Mechanics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV376",
+   "name": "Disaster Management with Spatial",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV377",
+   "name": "Remote Sensing and GIS",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV385",
+   "name": "Geoinformatics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV386",
+   "name": "Applied Rock Enginneing",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV387",
+   "name": "Applied Geology",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV388",
+   "name": "Advanced Surveying",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "CV389",
+   "name": "Advanced Structural Analysis",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV401",
+   "name": "Estimation Costing and Specifications",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV417",
+   "name": "Structural Design and Drawing Prereq: Cv251, Cv351",
+   "ltp": "1-0-3",
+   "credits": 3
+  },
+  {
+   "code": "CV421",
+   "name": "Bridge Engineering 4",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV422",
+   "name": "Advanced Design of Structures - I",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV423",
+   "name": "Design of Foundations, Earth and Earth",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV424",
+   "name": "Advanced Environmental Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV425",
+   "name": "Computer Aided Design and Applications in Civil Engineering",
+   "ltp": "2-0-3",
+   "credits": 4
+  },
+  {
+   "code": "CV426",
+   "name": "Solid Waste Management",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV427",
+   "name": "Structural Dynamics and Wind Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV471",
+   "name": "Advanced Design of Structures - II",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV472",
+   "name": "Ground Improvement Techniques",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV473",
+   "name": "FEM Applications in Civil Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV474",
+   "name": "Elements of Earthquake Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV475",
+   "name": "Oil and Natural Gas Exploration",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV477",
+   "name": "Seismoresistant Concrete Structures",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV485",
+   "name": "Air Pollution and Noise Pollution",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV486",
+   "name": "Environmental Impact Assessment",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV487",
+   "name": "Construction and Project Management",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV488",
+   "name": "Ground Water Development and Management",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV489",
+   "name": "Retrofitting and Rehabilitation of Structures",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV490",
+   "name": "Non-destructive testing & evaluation for Concrete Structures",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV491",
+   "name": "Bituminous Materials, Mixtures and Pavements",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CV492",
+   "name": "Reinforced Earth Structures",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CY110",
+   "name": "Chemistry",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CY205",
+   "name": "Organic Chemistry",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "CY300",
+   "name": "Instrumental Methods of Analysis",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "EC100",
+   "name": "Elements of Electronics and Communication Engineering",
+   "ltp": "2-0-0",
+   "credits": 2
+  },
+  {
+   "code": "EC101",
+   "name": "Joy of Electronics and Communication",
+   "ltp": "2-0-3",
+   "credits": 4
+  },
+  {
+   "code": "EC102",
+   "name": "Circuits and Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC200",
+   "name": "Digital System Design",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC201",
+   "name": "Analog Electronics",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC202",
+   "name": "Analog and Digital Communication",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC203",
+   "name": "Linear Algebra and Probability Theory",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC206",
+   "name": "Microprocessors",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC207",
+   "name": "Electromagnetic Waves and Transmission Lines",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC208",
+   "name": "Digital Signal Processing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC209",
+   "name": "Control Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC300",
+   "name": "VLSI Design",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC301",
+   "name": "RF Components and Circuits",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC340",
+   "name": "Computer Organization and Architecture",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC341",
+   "name": "Computer Arithmetic",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC342",
+   "name": "Embedded System Design",
+   "ltp": "2-0-3",
+   "credits": 4
+  },
+  {
+   "code": "EC343",
+   "name": "FPGA based System Design",
+   "ltp": "2-0-3",
+   "credits": 4
+  },
+  {
+   "code": "EC344",
+   "name": "Analog Integrated Circuits",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC345",
+   "name": "Data Structures and Algorithms",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "EC346",
+   "name": "Foundations of Machine Learning",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC347",
+   "name": "Speech and Audio Processing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC348",
+   "name": "Image and Video Processing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC349",
+   "name": "Applied Number Theory",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC350",
+   "name": "Numerical Analysis",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC351",
+   "name": "Satellite Communications",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC352",
+   "name": "Principles of Modern Radar and Techniques",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC353",
+   "name": "Modern Electronic Navigation Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC354",
+   "name": "Communication Networks",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC355",
+   "name": "Wireless Mobile Communication",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC356",
+   "name": "Information Theory and Coding",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC357",
+   "name": "Adhoc and Sensor Networks",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC358",
+   "name": "Multimedia Communication Techniques",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC359",
+   "name": "Techniques Software Defined and Cognitive Radio",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC360",
+   "name": "Machin Learning for Wireless",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC361",
+   "name": "Sparse Representations and Compressive Sensing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC362",
+   "name": "Deep Reinforcement Learning",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC363",
+   "name": "Machine Learning Applications in Radar Signal Processing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC440",
+   "name": "VLSI CAD",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC441",
+   "name": "Mixed Signal Design",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC442",
+   "name": "Advanced Computer Architecture",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC443",
+   "name": "VLSI Testing and Testability",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC444",
+   "name": "Synthesis and Optimization of Digital Circuits",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC445",
+   "name": "Techniques in Low Power VLSI",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC446",
+   "name": "Submicron Devices",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC447",
+   "name": "Active Filters",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC448",
+   "name": "Heterogeneous and Parallel Computing",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "EC449",
+   "name": "Algorithms and Architectures for Signal Processing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC450",
+   "name": "Analog and Digital Filter Design",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC451",
+   "name": "Advanced Digital Signal Processing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC452",
+   "name": "Real Time Signal Processing",
+   "ltp": "2-0-3",
+   "credits": 4
+  },
+  {
+   "code": "EC453",
+   "name": "Fourier and Wavelet Signal Processing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC454",
+   "name": "Mathematical Algorithms for Signal Processing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC455",
+   "name": "Digital Signal Compression",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC456",
+   "name": "Dynamical Systems, Chaos and Fractals",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC457",
+   "name": "Fractals Statistical Analysis",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC458",
+   "name": "Stochastic Processes",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC459",
+   "name": "Optimization and Applications",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC460",
+   "name": "Neural Networks and Deep Learning",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC461",
+   "name": "Spread Spectrum Communication",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC462",
+   "name": "Error Control Coding",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC463",
+   "name": "Optical Communication Systems and Networks",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC464",
+   "name": "Radar Signal Processing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC465",
+   "name": "Algorithms for Parameter and State Estimation",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC466",
+   "name": "Detection and Estimation Theory",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC467",
+   "name": "Advanced Topics in Communication Engineering",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC468",
+   "name": "Signal Integrity and EMI/ EMC",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC469",
+   "name": "Introduction to Photonics",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC470",
+   "name": "MIMO Communication Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC471",
+   "name": "RF IC Design",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC472",
+   "name": "Principles of Modern Radar- Advanced Advanced Techniques",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC473",
+   "name": "Electronic Defense Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC474",
+   "name": "Principles of Modern Sonar Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC475",
+   "name": "Advanced Electromagnetics",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC476",
+   "name": "Milimeter Wave Communication",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC477",
+   "name": "Imaging, Informatics and Computational Physics",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC478",
+   "name": "Complex Analysis and Applications",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC479",
+   "name": "Computational Inverse Problems and Applications",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC480",
+   "name": "Remote Sensing: Principles, Techniques and Applications",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EC481",
+   "name": "Advance Deep Learning and Applications",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE101",
+   "name": "Analysis of Electric Circuits",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE110",
+   "name": "Elements of Electrical Engineering",
+   "ltp": "2-0-0",
+   "credits": 2
+  },
+  {
+   "code": "EE143",
+   "name": "Mathematics for Electrical Engineers",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE207",
+   "name": "Electromagnetic Theory",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE213",
+   "name": "Induction Motors and Transformers",
+   "ltp": "3-1-3",
+   "credits": 6
+  },
+  {
+   "code": "EE224",
+   "name": "Electrical Measurements and Measuring Instruments",
+   "ltp": "3-1-3",
+   "credits": 6
+  },
+  {
+   "code": "EE226",
+   "name": "Analog Electronic Circuits",
+   "ltp": "3-1-3",
+   "credits": 6
+  },
+  {
+   "code": "EE229",
+   "name": "Polyphase Systems and Component – ",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE256",
+   "name": "Signals and Systems",
+   "ltp": "3-1-3",
+   "credits": 6
+  },
+  {
+   "code": "EE258",
+   "name": "Synchronous Machines and DC Machines",
+   "ltp": "3-1-3",
+   "credits": 6
+  },
+  {
+   "code": "EE260",
+   "name": "Digital Computer Organization and Architecture",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE265",
+   "name": "Power Transmission and Distribution",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE276",
+   "name": "Digital Electronic Circuits",
+   "ltp": "3-1-3",
+   "credits": 6
+  },
+  {
+   "code": "EE301",
+   "name": "Data Structures and Algorithms",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "EE303",
+   "name": "Distribution Systems Control and Automation",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE308",
+   "name": "Power Electronics",
+   "ltp": "3-1-3",
+   "credits": 6
+  },
+  {
+   "code": "EE311",
+   "name": "Digital System Design",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE312",
+   "name": "Power System Harmonics",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE313",
+   "name": "Digital Signal Processing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE319",
+   "name": "Neural Networks and Applications",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE320",
+   "name": "Electrical Safety, Operations, Regulations",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "EE321",
+   "name": "Linear and Nonlinear Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE324",
+   "name": "Electronic Measurements and Instrumentation",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE326",
+   "name": "Linear Control Systems",
+   "ltp": "3-1-3",
+   "credits": 6
+  },
+  {
+   "code": "EE328",
+   "name": "Network Synthesis",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE329",
+   "name": "Traveling Waves on Transmission Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE343",
+   "name": "Statistical Foundation for Electrical Engineers",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE350",
+   "name": "Power System Analysis",
+   "ltp": "3-1-3",
+   "credits": 6
+  },
+  {
+   "code": "EE359",
+   "name": "Energy Auditing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE360",
+   "name": "Microprocessors and Microcontrollers",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE362",
+   "name": "Operation and control of Power Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE363",
+   "name": "Advanced Digital Signal Processing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE366",
+   "name": "Special Machines and Drives",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE369",
+   "name": "Embedded System Design",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE371",
+   "name": "Power Electronics Applications to Power Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE373",
+   "name": "Electric Power Stations",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE374",
+   "name": "Electric Energy Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE376",
+   "name": "Advanced Control Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE377",
+   "name": "Introduction to Nonlinear and Linear Optimisation",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE401",
+   "name": "Time Series Analysis and Forecasting",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "EE402",
+   "name": "HVDC Transmission",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE403",
+   "name": "Deep Neural Network and Applications",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "EE404",
+   "name": "Soft Computing and applications",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE406",
+   "name": "Electromagnetic Compatibility",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE407",
+   "name": "Modelling of Electrical Machines",
+   "ltp": "4-0-0",
+   "credits": 4
+  },
+  {
+   "code": "EE408",
+   "name": "Solid-State Drives",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE410",
+   "name": "Power System Protection",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE411",
+   "name": "Operation of Power Systems Under Deregulation",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE412",
+   "name": "Random Signal Processing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE418",
+   "name": "Advanced Power Electronics",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE420",
+   "name": "Power System Dynamics",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE422",
+   "name": "Principles of Switchgear and Protection",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE427",
+   "name": "Computer Networks",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE428",
+   "name": "The ARM Core: Architecture and Programming",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE430",
+   "name": "Introduction to Robot Dynamics and Control",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE432",
+   "name": "Introduction to Machine Learning",
+   "ltp": "3-1-2",
+   "credits": 5
+  },
+  {
+   "code": "EE443",
+   "name": "Mathematical Morphology & applications to Signal Processing",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE451",
+   "name": "Fundamentals of ElectricVehicles",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE454",
+   "name": "Flexible AC Transmission Systems",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE456",
+   "name": "High-Voltage Engineering",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE458",
+   "name": "Photovoltaics and Applications",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE464",
+   "name": "Power Generation and Economics",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE466",
+   "name": "Utilization of Electrical Energy",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE467",
+   "name": "Industrial Electrical Systems",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "EE468",
+   "name": "Advanced Electric Drives",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE469",
+   "name": "New and Renewable Energy Systems",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "EE470",
+   "name": "Computational Technique for large system",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE472",
+   "name": "Insulation and Testing Engineering",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE500",
+   "name": "System Analysis in Discrete Time",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "EE501",
+   "name": "Analysis of Nonlinear Circuits",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "IT110",
+   "name": "Digital System Design",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT111",
+   "name": "Fundamentals of Computer Systems",
+   "ltp": "4-0-0",
+   "credits": 4
+  },
+  {
+   "code": "IT150",
+   "name": "Object Oriented Programming",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT151",
+   "name": "Python Programming",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT200",
+   "name": "Computer Communication and Networking",
+   "ltp": "4-0-0",
+   "credits": 4
+  },
+  {
+   "code": "IT201",
+   "name": "Computer Organization and Architecture",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT202",
+   "name": "Data Structures and Algorithms-I",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT203",
+   "name": "Discrete Mathematics",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "IT204",
+   "name": "Signals and Systems",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT207",
+   "name": "Human Intelligence",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT208",
+   "name": "Discrete Mathematics",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT209",
+   "name": "Data Structures and Algorithms",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT211",
+   "name": "Probability and Statistics",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT212",
+   "name": "Intelligent Data Management",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT213",
+   "name": "Database Systems",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT250",
+   "name": "Formal Languages and Automata Theory",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "IT251",
+   "name": "Data Structures and Algorithms-II",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT252",
+   "name": "Database Systems",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT253",
+   "name": "Operating Systems",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT254",
+   "name": "Web Technologies and Applications",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT255",
+   "name": "Artificial Intelligence",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT256",
+   "name": "Applied Linear Algebra",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT257",
+   "name": "Design and Analysis of Algorithms",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT258",
+   "name": "Data Science",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT259",
+   "name": "Data Visualization",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT260",
+   "name": "Robotics Programming",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT300",
+   "name": "Design and Analysis of Algorithms",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT301",
+   "name": "Parallel Computing",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT302",
+   "name": "Probability and Statistics",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT303",
+   "name": "Software Engineering",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT304",
+   "name": "Optimization Techniques",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT305",
+   "name": "Game Theory",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT306",
+   "name": "Parallel and Distributed Problem Solving",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT307",
+   "name": "Machine Learning",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT308",
+   "name": "Brain Computer Interfaces",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT350",
+   "name": "Data Analytics",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT351",
+   "name": "Human Computer Interaction",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT352",
+   "name": "Information Assurance and Security",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT353",
+   "name": "Deep Learning",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT354",
+   "name": "Reinforcement Learning",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT355",
+   "name": "Autonomous Agents",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT356",
+   "name": "Natural Language Processing",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT357",
+   "name": "Computer Vision",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT358",
+   "name": "Soft Computing",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT359",
+   "name": "Pattern Recognition",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT360",
+   "name": "Information Systems",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT361",
+   "name": "Paradigms of Programming",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT362",
+   "name": "Computer Graphics",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT363",
+   "name": "Microprocessors and Interfacing",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT364",
+   "name": "Performance Modeling",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT365",
+   "name": "Advanced Computer Networks",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT366",
+   "name": "Object Oriented Analysis and Design",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT367",
+   "name": "Information Retrieval",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT368",
+   "name": "Internet of Things",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT369",
+   "name": "Performance Modeling",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT370",
+   "name": "Time Series Analysis",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT371",
+   "name": "Operating Systems",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT372",
+   "name": "Mobile Networks",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT400",
+   "name": "Perceptual Audio Processing",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT401",
+   "name": "Perceptual Video Processing",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT402",
+   "name": "Soft Computing",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT403",
+   "name": "Genetic Algorithms",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT404",
+   "name": "Artificial Neural Networks",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT405",
+   "name": "Fuzzy System Models",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT406",
+   "name": "Distributed Computing Systems",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT407",
+   "name": "Technologies for Internet of Things",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT408",
+   "name": "Mobile Computing",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT409",
+   "name": "Embedded Systems",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT410",
+   "name": "Bioinformatics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT411",
+   "name": "Knowledge Management",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT412",
+   "name": "Time Series Analysis",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT413",
+   "name": "System Integration",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT414",
+   "name": "Data Warehousing and Data Mining",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT415",
+   "name": "Middleware Technologies",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT416",
+   "name": "Computer Vision",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT417",
+   "name": "Pattern Recognition",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT418",
+   "name": "Cloud Computing",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT419",
+   "name": "Wireless Sensor Networks",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT420",
+   "name": "Mobile Adhoc Networks",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT421",
+   "name": "Semantic Web Technologies",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT422",
+   "name": "Virtual Reality",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT423",
+   "name": "Rich Internet Applications",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT424",
+   "name": "Computational Auditory Perception",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT425",
+   "name": "Computational Visual Perception",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT426",
+   "name": "Smart Systems Development",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT427",
+   "name": "Genetic Algorithms",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT428",
+   "name": "Industry 4.0",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT429",
+   "name": "Number Theory and Cryptography",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT430",
+   "name": "Quantum Cryptography",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT431",
+   "name": "Distributed Computing",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT432",
+   "name": "Computational Photography",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT433",
+   "name": "Blockchain Technology",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT434",
+   "name": "Digital Forensics",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT435",
+   "name": "Computational Biology",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT436",
+   "name": "Cloud Computing",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT437",
+   "name": "Quantum Computing",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT438",
+   "name": "Big Data Analytics",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT439",
+   "name": "Sentiment Analysis",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT442",
+   "name": "Autonomous Cyber Physical Systems",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT443",
+   "name": "Stochastic Processes",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT445",
+   "name": "User Experience Design",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT450",
+   "name": "Web Services",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT451",
+   "name": "Software Architecture",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT452",
+   "name": "Advanced Computer Architecture",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT453",
+   "name": "Transaction Processing",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT454",
+   "name": "Software Quality Assurance",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT455",
+   "name": "Information Technology for Healthcare",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT456",
+   "name": "Enterprise Resource Planning and Systems",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT457",
+   "name": "Natural Language Processing",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT458",
+   "name": "Information Retrieval",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT459",
+   "name": "Simulation and Modelling",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT460",
+   "name": "E-Commerce",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT461",
+   "name": "Advanced Database Systems",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT462",
+   "name": "Number Theory and Cryptography",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT463",
+   "name": "Linux Kernel Internals",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT464",
+   "name": "Foundations of Machine Learning",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT465",
+   "name": "Cryptocurrencies and Blockchain Technologies",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT466",
+   "name": "Fundamentals of 5G",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT467",
+   "name": "Robotic Process Automation",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT468",
+   "name": "Quantum Computing",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT469",
+   "name": "AI in Healthcare",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT471",
+   "name": "Cyber Security",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT472",
+   "name": "Computer Networks",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT473",
+   "name": "Cognitive Networks",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT474",
+   "name": "Formal Languages & Automata Theory",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT475",
+   "name": "Computer Organisation & Architecture",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "IT476",
+   "name": "Human Centered Computing",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT477",
+   "name": "Digital System Design",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT478",
+   "name": "Data Mining",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT479",
+   "name": "Signals and Systems",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT480",
+   "name": "Social Computing",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT482",
+   "name": "Social Network Analysis",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT483",
+   "name": "Narrowband Internet of Things",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT484",
+   "name": "Randomized Algorithms",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "IT485",
+   "name": "Applied Algorithms",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "IT486",
+   "name": "Applied Algorithms",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT487",
+   "name": "Compiler Design",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT488",
+   "name": "Large Language Models",
+   "ltp": "3-0-2",
+   "credits": 4
+  },
+  {
+   "code": "IT489",
+   "name": "Randomized Algorithms",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MA110",
+   "name": "Engineering Mathematics - I",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA111",
+   "name": "Engineering Mathematics - II",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA112",
+   "name": "Digital System Design",
+   "ltp": "4-0-0",
+   "credits": 4
+  },
+  {
+   "code": "MA113",
+   "name": "Linear Algebra",
+   "ltp": "4-0-0",
+   "credits": 4
+  },
+  {
+   "code": "MA201",
+   "name": "Concrete Mathematics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA202",
+   "name": "Discrete Mathematical Structures",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA204",
+   "name": "Linear Algebra and Matrices",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA206",
+   "name": "Number Theory and Cryptography",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA207",
+   "name": "Numerical Methods",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA208",
+   "name": "Probability Theory and Applications",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA211",
+   "name": "Laplace and Z Transforms",
+   "ltp": "1-0-0",
+   "credits": 1
+  },
+  {
+   "code": "MA221",
+   "name": "Data Structures",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA222",
+   "name": "Computational Linear Algebra",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA223",
+   "name": "Computer Org & Arch",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA226",
+   "name": "Operating Systems",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA227",
+   "name": "Database Systems",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA302",
+   "name": "Data Analysis, Time Series Analysis And Non-Parametric Methods",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA303",
+   "name": "Integral Transforms and Applications",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA321",
+   "name": "Fundamentals of Data Science",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA322",
+   "name": "Design & Analysis of Algorithms",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA325",
+   "name": "Machine Learning",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA326",
+   "name": "Theory of Finite Automata, Formal Languages and Computation",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA401",
+   "name": "Computational Fluid Dynamics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA403",
+   "name": "Mathematical Modelling",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA405",
+   "name": "Reliability Theory and Applications",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA406",
+   "name": "Statistical Design and Analysis of Experiments",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA408",
+   "name": "Stochastic Analysis and Applications",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA421",
+   "name": "Financial Mathematics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA506",
+   "name": "Quadratic Forms and Linear Algebra",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA507",
+   "name": "Image Processing",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA508",
+   "name": "Soft Computing",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA509",
+   "name": "Combinatorial Optimization",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA512",
+   "name": "Numerical Solutions of Differential Equations",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA513",
+   "name": "Modern Algebra",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA514",
+   "name": "Pattern Recognition",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA515",
+   "name": "Statistical Techniques for Data Mining",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA516",
+   "name": "Software Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA517",
+   "name": "Algorithmic Combinatorics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA518",
+   "name": "Selected Topics in Graph Theory",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA519",
+   "name": "Systems Modelling and Simulation",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA520",
+   "name": "Selected Topics in Computer Algorithms",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA521",
+   "name": "Mobile Computing",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA523",
+   "name": "Computer Networks",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA525",
+   "name": "Computational Number Theory",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA526",
+   "name": "Game Theory",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA527",
+   "name": "Network Security",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA528",
+   "name": "Introduction to Parallel Programming",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA529",
+   "name": "Advanced Data Science",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA531",
+   "name": "Statistical Quality Control",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA532",
+   "name": "Big data Analytics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA533",
+   "name": "Wavelets in Data Science",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA534",
+   "name": "Cloud Computing",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA535",
+   "name": "Distributed Computing Systems",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA536",
+   "name": "Advanced Database Systems",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA537",
+   "name": "Optimization Techniques",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA538",
+   "name": "Artificial Intelligence",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA539",
+   "name": "Multivariate Statistical Analysis",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA540",
+   "name": "Data Analysis and Visualization",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA541",
+   "name": "Artificial Neural Networks",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA542",
+   "name": "Computer Vision",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA543",
+   "name": "Data Compression and Coding",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA544",
+   "name": "Deep Learning",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA545",
+   "name": "Probabilistic Graphical Models",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MA546",
+   "name": "Topological Data Analysis",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME110",
+   "name": "Elements of Mechanical Engineering",
+   "ltp": "2-0-0",
+   "credits": 2
+  },
+  {
+   "code": "ME111",
+   "name": "Engineering Graphics",
+   "ltp": "1-0-3",
+   "credits": 3
+  },
+  {
+   "code": "ME112",
+   "name": "Materials Science and Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME113",
+   "name": "Mechanics of Deformable Bodies",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME201",
+   "name": "Basic Engineering Thermodynamics",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "ME202",
+   "name": "Fluid Mechanics and Machinery",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "ME203",
+   "name": "Mechanics of Machinery",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "ME204",
+   "name": "Basic Manufacturing Processes",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "ME211",
+   "name": "Thermodynamic & Fluid Mechanics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME251",
+   "name": "Applied Thermodynamics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME252",
+   "name": "Analysis and Design of Machine Components",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "ME253",
+   "name": "Computer Aided Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME254",
+   "name": "Manufacturing Technology",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME255",
+   "name": "Engineering Drawing",
+   "ltp": "1-0-3",
+   "credits": 3
+  },
+  {
+   "code": "ME301",
+   "name": "Metrology and Instrumentation",
+   "ltp": "4-0-0",
+   "credits": 4
+  },
+  {
+   "code": "ME302",
+   "name": "Heat Transfer",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME303",
+   "name": "Design of Mechanical Drives",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME304",
+   "name": "Automobile Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME305",
+   "name": "Mechatronic Systems",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME311",
+   "name": "Finite Element Method",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME312",
+   "name": "Theory of Elasticity",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME313",
+   "name": "Hydraulics and Pneumatic Control",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME314",
+   "name": "Product Design and Development",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME315",
+   "name": "Theory of Metal Forming",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME316",
+   "name": "Welding Technology",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME317",
+   "name": "Basics of Computational Fluid Dynamics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME318",
+   "name": "Principles of Turbomachinery",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME320",
+   "name": "Cryogenics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME351",
+   "name": "Energy Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME352",
+   "name": "Machine Dynamics and Vibrations",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "ME353",
+   "name": "Control Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME354",
+   "name": "Operations Research",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME411",
+   "name": "Theory of Fatigue and Analysis",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME412",
+   "name": "Experimental Stress Analysis",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME413",
+   "name": "Synthesis of Mechanisms",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME414",
+   "name": "Microsystem Technology",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME415",
+   "name": "Automation Systems",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME416",
+   "name": "Robotics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME417",
+   "name": "Non-Destructive Evaluation",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME418",
+   "name": "Production and Operations Management",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME419",
+   "name": "Composites Materials",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME420",
+   "name": "IC Engines",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME421",
+   "name": "Refrigeration and Air Conditioning",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME422",
+   "name": "Mechanics of Compressible Flow",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME423",
+   "name": "Multi Body Dynamics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME424",
+   "name": "Vehicle Dynamics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME425",
+   "name": "Contemporary Concepts in Product Design",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME426",
+   "name": "Automotive Electronics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME427",
+   "name": "Introduction to Additive Manufacturing",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME428",
+   "name": "Non-Traditional Machining Processes",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME429",
+   "name": "Energy Auditing and Management",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME430",
+   "name": "Gas Turbines and Jet Propulsion",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME431",
+   "name": "Continuum Mechanics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME432",
+   "name": "Analytical Mechanics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME433",
+   "name": "Condition Monitoring",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME434",
+   "name": "Microfluidics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME435",
+   "name": "Solar Energy",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME436",
+   "name": "Engineering Tribology",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME437",
+   "name": "Thermal Stress Analysis",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME438",
+   "name": "Injury Biomechanics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME439",
+   "name": "Introduction to Flight",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME441",
+   "name": "Pollution Control and Environmental Management",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME442",
+   "name": "Aerodynamics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME443",
+   "name": "Mechanical Vibrations and Acoustics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "ME444",
+   "name": "Data Driven Modeling using Machine Learning",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MI101",
+   "name": "Introduction to Mining Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI201",
+   "name": "Development of Mineral Deposits",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI202",
+   "name": "Mine Surveying",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MI210",
+   "name": "Drilling & Blasting Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI211",
+   "name": "Seabed Mining",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI254",
+   "name": "Mining Machinery",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MI260",
+   "name": "Applied Mine Surveying",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI261",
+   "name": "Electrical Machinery in Mines",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI301",
+   "name": "Surface Mining Technology",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MI302",
+   "name": "Mine Hazards, Rescue and Recovery",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MI303",
+   "name": "Underground Coal Mining Technology",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MI310",
+   "name": "Noise Pollution & Control Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI311",
+   "name": "Rock Reinforcement Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI312",
+   "name": "Mine Power Systems",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI351",
+   "name": "Underground Metal Mining Technology",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MI352",
+   "name": "Rock Mechanics",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MI354",
+   "name": "Mine Systems Optimization",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MI360",
+   "name": "Mine Health and Safety Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI361",
+   "name": "Advanced Surface Mining Technology",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI362",
+   "name": "Production Drilling for Oil Wells",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI363",
+   "name": "Mechanization and Materials Handling",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI401",
+   "name": "Mineral Processing Technology",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MI403",
+   "name": "Rock Fragmentation Engineering",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MI405",
+   "name": "Strata Mechanics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI410",
+   "name": "Advanced U/G Coal Mining Technology",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI411",
+   "name": "Geostatistics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI412",
+   "name": "Applications of IT in Mining Projects",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI451",
+   "name": "Mine Legislation & Safety",
+   "ltp": "4-0-0",
+   "credits": 4
+  },
+  {
+   "code": "MI452",
+   "name": "Ore Reserve Estimation and Mine Valuation",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI460",
+   "name": "Coal Washing and Handling",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI461",
+   "name": "Surface Mine Design",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI462",
+   "name": "Underground Coal Mine Design",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI463",
+   "name": "Underground Metal Mine Design",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI464",
+   "name": "Environmental Management and Sustainable Development",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI471",
+   "name": "Reliability Analysis of Engineering Systems",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI472",
+   "name": "Rock Excavation in Mines and Infrastructure Projects",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI473",
+   "name": "Stability of Rock Slopes",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI474",
+   "name": "Tunneling Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI475",
+   "name": "Numerical Modeling Techniques",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI476",
+   "name": "Industrial Engineering & Management",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI477",
+   "name": "Remote Sensing & Geoinformatics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI478",
+   "name": "Safety Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MI479",
+   "name": "Energy Resources Utilization and Climate Change",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT160",
+   "name": "Introduction to Materials Science & Technology",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MT200",
+   "name": "Testing of Materials",
+   "ltp": "2-0-1",
+   "credits": 3
+  },
+  {
+   "code": "MT201",
+   "name": "Metallurgical Thermodynamics & Kinetics",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MT202",
+   "name": "Physical Metallurgy",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MT203",
+   "name": "Polymer Science and Technology",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT251",
+   "name": "Transport Phenomena",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MT252",
+   "name": "Phase Diagrams",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MT253",
+   "name": "Principles of Extractive Metallurgy",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MT254",
+   "name": "X-ray Diffraction & Electron Microscopy",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MT255",
+   "name": "Instrumental Methods of Analysis",
+   "ltp": "3-0-1",
+   "credits": 4
+  },
+  {
+   "code": "MT256",
+   "name": "Measurements and Control",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT300",
+   "name": "Production of Iron and Ferro Alloys",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT301",
+   "name": "Heat Treatment",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MT302",
+   "name": "Machine Design",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "MT303",
+   "name": "Electronic Properties of Materials",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT306",
+   "name": "Fatigue, Fracture and Creep",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT307",
+   "name": "Fuels and Furnaces",
+   "ltp": "2-1-0",
+   "credits": 3
+  },
+  {
+   "code": "MT350",
+   "name": "Production of Steel",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT351",
+   "name": "Ceramics and Refractories",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT355",
+   "name": "Powder Metallurgy",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT356",
+   "name": "Joining of Metals",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT357",
+   "name": "Aerospace Materials",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT400",
+   "name": "Corrosion Engineering",
+   "ltp": "3-0-1",
+   "credits": 4
+  },
+  {
+   "code": "MT401",
+   "name": "Metal Forming",
+   "ltp": "2-0-1",
+   "credits": 3
+  },
+  {
+   "code": "MT402",
+   "name": "Foundry Technology",
+   "ltp": "2-0-1",
+   "credits": 3
+  },
+  {
+   "code": "MT403",
+   "name": "Phase Transformations",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT404",
+   "name": "Extraction of Non-Ferrous Metals",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT405",
+   "name": "Secondary Refining of Steels",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT406",
+   "name": "Process Plant Materials",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT407",
+   "name": "Advanced Engineering Materials",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT408",
+   "name": "Thin Films, Coatings and Applications",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT409",
+   "name": "Nuclear Materials",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT410",
+   "name": "Fracture of Engineering Materials",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT451",
+   "name": "Composite Materials",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT452",
+   "name": "Advanced Welding Technology",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT453",
+   "name": "Surface Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT454",
+   "name": "Processes",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT455",
+   "name": "Science & Technology of Nanomaterials",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT456",
+   "name": "Advanced Microscopic Techniques",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "MT457",
+   "name": "Smart Materials and Sensors",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "PH110",
+   "name": "Physics",
+   "ltp": "3-1-0",
+   "credits": 4
+  },
+  {
+   "code": "SM110",
+   "name": "Professional Communication",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "SM111",
+   "name": "Professional Ethics and Human values",
+   "ltp": "1-0-0",
+   "credits": 1
+  },
+  {
+   "code": "SM300",
+   "name": "Engineering Economics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "SM302",
+   "name": "Principles of Management",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "UC100",
+   "name": "Introduction to Design Thinking",
+   "ltp": "2-0-0",
+   "credits": 2
+  },
+  {
+   "code": "WO110",
+   "name": "Engineering Mechanics",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "WO200",
+   "name": "Mechanics of Materials",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "WO218",
+   "name": "Mechanics of Fluids",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "WO260",
+   "name": "Water Resources Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "WO371",
+   "name": "Open Channel Flow and Sediment",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "WO372",
+   "name": "Civil Engineering Systems",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "WO400",
+   "name": "Geographic Information System",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "WO401",
+   "name": "Satellite Digital Image Analysis",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "WO402",
+   "name": "Introduction to Geospatial Technology",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "WO403",
+   "name": "Global Positioning Systems",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "WO421",
+   "name": "Design and Drawing of Hydraulic",
+   "ltp": "1-0-3",
+   "credits": 3
+  },
+  {
+   "code": "WO422",
+   "name": "Fundamentals of Coastal Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "WO423",
+   "name": "Basics of Offshore Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "WO424",
+   "name": "Coastal Erosion and its Mitigation",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "WO445",
+   "name": "Fundamentals of Finite Element Method",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "WO455",
+   "name": "Engineering Optimization",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "WO473",
+   "name": "Water Resources Excess Management",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "WO474",
+   "name": "Computational Methods in Hydrology",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "WO475",
+   "name": "Ground Water Engineering",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "WO477",
+   "name": "Open Source Virtual Instrumentation",
+   "ltp": "2-0-2",
+   "credits": 3
+  },
+  {
+   "code": "WO478",
+   "name": "Theory of Isotropic Elasticity",
+   "ltp": "3-0-0",
+   "credits": 3
+  },
+  {
+   "code": "WO479",
+   "name": "Application of Artificial Intelligence",
+   "ltp": "2-1-0",
+   "credits": 3
+  }
+ ],
+ "offerings": [
+  {
+   "programme": "CH",
+   "code": "CY110",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "CH",
+   "code": "MA110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "CH",
+   "code": "MA111",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "CH",
+   "code": "PH110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "CH",
+   "code": "CY205",
+   "semester": 4,
+   "category": "BSC"
+  },
+  {
+   "programme": "CH",
+   "code": "CY300",
+   "semester": 6,
+   "category": "BSC"
+  },
+  {
+   "programme": "CH",
+   "code": "CS100",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "CH",
+   "code": "EE110",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "CH",
+   "code": "ME110",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "CH",
+   "code": "ME111",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "CH",
+   "code": "WO110",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "CH",
+   "code": "SM110",
+   "semester": 1,
+   "category": "HSC"
+  },
+  {
+   "programme": "CH",
+   "code": "SM300",
+   "semester": 5,
+   "category": "HSC"
+  },
+  {
+   "programme": "CH",
+   "code": "SM302",
+   "semester": 6,
+   "category": "HSC"
+  },
+  {
+   "programme": "CH",
+   "code": "CH150",
+   "semester": 2,
+   "category": "PC"
+  },
+  {
+   "programme": "CH",
+   "code": "CH200",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CH",
+   "code": "CH201",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CH",
+   "code": "CH202",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CH",
+   "code": "CH203",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CH",
+   "code": "CH250",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "CH",
+   "code": "CH251",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "CH",
+   "code": "CH252",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "CH",
+   "code": "CH300",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "CH",
+   "code": "CH301",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "CH",
+   "code": "CH302",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "CH",
+   "code": "CH350",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "CH",
+   "code": "CH351",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "CH",
+   "code": "CH400",
+   "semester": 7,
+   "category": "PC"
+  },
+  {
+   "programme": "CH",
+   "code": "MA207",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CH",
+   "code": "MA211",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CH",
+   "code": "CH450",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CH",
+   "code": "CH451",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CH",
+   "code": "CH452",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CH",
+   "code": "CH453",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CH",
+   "code": "CH454",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CH",
+   "code": "CH455",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CH",
+   "code": "CH456",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CH",
+   "code": "CH457",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CH",
+   "code": "CH458",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CH",
+   "code": "SM111",
+   "semester": 1,
+   "category": "MLC"
+  },
+  {
+   "programme": "CH",
+   "code": "CV110",
+   "semester": 2,
+   "category": "MLC"
+  },
+  {
+   "programme": "CH",
+   "code": "UC100",
+   "semester": 2,
+   "category": "MLC"
+  },
+  {
+   "programme": "CV",
+   "code": "CY110",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "CV",
+   "code": "MA110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "CV",
+   "code": "MA111",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "CV",
+   "code": "PH110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "CV",
+   "code": "CS100",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "CV",
+   "code": "EC100",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "CV",
+   "code": "EE110",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "CV",
+   "code": "ME110",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "CV",
+   "code": "ME111",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "CV",
+   "code": "WO110",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "CV",
+   "code": "SM110",
+   "semester": 1,
+   "category": "HSC"
+  },
+  {
+   "programme": "CV",
+   "code": "SM300",
+   "semester": 6,
+   "category": "HSC"
+  },
+  {
+   "programme": "CV",
+   "code": "SM302",
+   "semester": 5,
+   "category": "HSC"
+  },
+  {
+   "programme": "CV",
+   "code": "CV100",
+   "semester": 2,
+   "category": "PC"
+  },
+  {
+   "programme": "CV",
+   "code": "CV201",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CV",
+   "code": "CV202",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CV",
+   "code": "CV251",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "CV",
+   "code": "CV252",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "CV",
+   "code": "CV253",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "CV",
+   "code": "CV254",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "CV",
+   "code": "CV301",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "CV",
+   "code": "CV316",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "CV",
+   "code": "CV351",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "CV",
+   "code": "CV401",
+   "semester": 7,
+   "category": "PC"
+  },
+  {
+   "programme": "CV",
+   "code": "CV417",
+   "semester": 7,
+   "category": "PC"
+  },
+  {
+   "programme": "CV",
+   "code": "MA207",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CV",
+   "code": "WO200",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CV",
+   "code": "WO218",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CV",
+   "code": "WO260",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "CV",
+   "code": "CV268",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV321",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV322",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV323",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV324",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV325",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV326",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV371",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV372",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV373",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV374",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV375",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV376",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV377",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV385",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV386",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV387",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV388",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV389",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV421",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV422",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV423",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV424",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV425",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV426",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV427",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV471",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV472",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV473",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV474",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV475",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV477",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV485",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV486",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV487",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV488",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV489",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV490",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV491",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV492",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "WO371",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "WO372",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "WO400",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "WO401",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "WO402",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "WO403",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "WO421",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "WO422",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "WO423",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "WO424",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "WO445",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "WO455",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "WO473",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "WO474",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "WO475",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "WO477",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "WO478",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "WO479",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CV",
+   "code": "CV110",
+   "semester": 2,
+   "category": "MLC"
+  },
+  {
+   "programme": "CV",
+   "code": "SM111",
+   "semester": 1,
+   "category": "MLC"
+  },
+  {
+   "programme": "CV",
+   "code": "UC100",
+   "semester": 2,
+   "category": "MLC"
+  },
+  {
+   "programme": "CS",
+   "code": "CY110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "CS",
+   "code": "MA110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "CS",
+   "code": "MA111",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "CS",
+   "code": "PH110",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "CS",
+   "code": "CS110",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "CS",
+   "code": "ME110",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "CS",
+   "code": "ME111",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "CS",
+   "code": "WO110",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "CS",
+   "code": "SM110",
+   "semester": 2,
+   "category": "HSC"
+  },
+  {
+   "programme": "CS",
+   "code": "SM300",
+   "semester": 5,
+   "category": "HSC"
+  },
+  {
+   "programme": "CS",
+   "code": "SM302",
+   "semester": 6,
+   "category": "HSC"
+  },
+  {
+   "programme": "CS",
+   "code": "CS112",
+   "semester": 2,
+   "category": "PC"
+  },
+  {
+   "programme": "CS",
+   "code": "CS200",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CS",
+   "code": "CS201",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CS",
+   "code": "CS202",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CS",
+   "code": "CS251",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "CS",
+   "code": "CS252",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "CS",
+   "code": "CS253",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "CS",
+   "code": "CS255",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "CS",
+   "code": "CS256",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "CS",
+   "code": "CS301",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "CS",
+   "code": "CS303",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "CS",
+   "code": "CS305",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "CS",
+   "code": "MA204",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CS",
+   "code": "MA208",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "CS",
+   "code": "CS311",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS312",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS314",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS315",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS316",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS317",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS318",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS319",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS320",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS321",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS322",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS346",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS351",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS352",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS353",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS354",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS355",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS356",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS357",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS358",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS359",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS360",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS361",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS362",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS363",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS364",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS365",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS366",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS367",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS368",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS369",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS370",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS371",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS372",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS410",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS373",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS411",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS412",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS413",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS414",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS415",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS416",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS417",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS418",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS419",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS420",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS421",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS422",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS423",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS424",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS425",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS426",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS427",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS428",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS429",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS430",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS431",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS432",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS433",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS434",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS435",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS460",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS461",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS462",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS463",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS464",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS465",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS466",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS467",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS468",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS469",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS470",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS471",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "CS472",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CS",
+   "code": "UC100",
+   "semester": 1,
+   "category": "MLC"
+  },
+  {
+   "programme": "CS",
+   "code": "CV110",
+   "semester": 1,
+   "category": "MLC"
+  },
+  {
+   "programme": "CS",
+   "code": "SM111",
+   "semester": 2,
+   "category": "MLC"
+  },
+  {
+   "programme": "EE",
+   "code": "CY110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "EE",
+   "code": "MA110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "EE",
+   "code": "MA111",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "EE",
+   "code": "PH110",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "EE",
+   "code": "CS100",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "EE",
+   "code": "ME110",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "EE",
+   "code": "ME111",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "EE",
+   "code": "WO110",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "EE",
+   "code": "SM110",
+   "semester": 2,
+   "category": "HSC"
+  },
+  {
+   "programme": "EE",
+   "code": "SM300",
+   "semester": 5,
+   "category": "HSC"
+  },
+  {
+   "programme": "EE",
+   "code": "SM302",
+   "semester": 6,
+   "category": "HSC"
+  },
+  {
+   "programme": "EE",
+   "code": "EE101",
+   "semester": 1,
+   "category": "PC"
+  },
+  {
+   "programme": "EE",
+   "code": "EE143",
+   "semester": 2,
+   "category": "PC"
+  },
+  {
+   "programme": "EE",
+   "code": "EE207",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "EE",
+   "code": "EE213",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "EE",
+   "code": "EE224",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "EE",
+   "code": "EE226",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "EE",
+   "code": "EE256",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "EE",
+   "code": "EE258",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "EE",
+   "code": "EE265",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "EE",
+   "code": "EE276",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "EE",
+   "code": "EE308",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "EE",
+   "code": "EE326",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "EE",
+   "code": "EE350",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "EE",
+   "code": "EE229",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE260",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE301",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE303",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE311",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE312",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE313",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE319",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE320",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE321",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE324",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE328",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE329",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE343",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE359",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE360",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE362",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE363",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE366",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE369",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE371",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE373",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE374",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE376",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE377",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE401",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE402",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE403",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE404",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE406",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE407",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE408",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE410",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE411",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE412",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE418",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE420",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE422",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE427",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE428",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE430",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE432",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE443",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE454",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE456",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE458",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE451",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE464",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE466",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE467",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE468",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE469",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE470",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE472",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE500",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "EE501",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EE",
+   "code": "CV110",
+   "semester": 1,
+   "category": "MLC"
+  },
+  {
+   "programme": "EE",
+   "code": "SM111",
+   "semester": 2,
+   "category": "MLC"
+  },
+  {
+   "programme": "EE",
+   "code": "UC100",
+   "semester": 1,
+   "category": "MLC"
+  },
+  {
+   "programme": "EC",
+   "code": "CY110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "EC",
+   "code": "MA110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "EC",
+   "code": "MA111",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "EC",
+   "code": "PH110",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "EC",
+   "code": "CS110",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "EC",
+   "code": "ME110",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "EC",
+   "code": "ME111",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "EC",
+   "code": "WO110",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "EC",
+   "code": "SM110",
+   "semester": 2,
+   "category": "HSC"
+  },
+  {
+   "programme": "EC",
+   "code": "SM300",
+   "semester": 5,
+   "category": "HSC"
+  },
+  {
+   "programme": "EC",
+   "code": "SM302",
+   "semester": 6,
+   "category": "HSC"
+  },
+  {
+   "programme": "EC",
+   "code": "EC101",
+   "semester": 1,
+   "category": "PC"
+  },
+  {
+   "programme": "EC",
+   "code": "EC102",
+   "semester": 2,
+   "category": "PC"
+  },
+  {
+   "programme": "EC",
+   "code": "EC200",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "EC",
+   "code": "EC201",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "EC",
+   "code": "EC202",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "EC",
+   "code": "EC203",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "EC",
+   "code": "EC206",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "EC",
+   "code": "EC207",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "EC",
+   "code": "EC208",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "EC",
+   "code": "EC209",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "EC",
+   "code": "EC300",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "EC",
+   "code": "EC301",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "EC",
+   "code": "EC340",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC341",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC342",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC343",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC344",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC345",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC346",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC347",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC348",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC349",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC350",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC351",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC352",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC353",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC354",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC355",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC356",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC357",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC358",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC359",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC360",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC361",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC362",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC363",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC440",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC441",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC442",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC443",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC444",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC445",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC446",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC447",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC448",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC449",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC450",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC451",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC452",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC453",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC454",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC455",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC456",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC457",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC458",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC459",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC460",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC461",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC462",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC463",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC464",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC465",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC466",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC467",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC468",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC469",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC470",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC471",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC472",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC473",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC474",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC475",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC476",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC477",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC478",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC479",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC480",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "EC481",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "EC",
+   "code": "CV110",
+   "semester": 1,
+   "category": "MLC"
+  },
+  {
+   "programme": "EC",
+   "code": "SM111",
+   "semester": 2,
+   "category": "MLC"
+  },
+  {
+   "programme": "EC",
+   "code": "UC100",
+   "semester": 1,
+   "category": "MLC"
+  },
+  {
+   "programme": "IT",
+   "code": "MA110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "IT",
+   "code": "PH110",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "IT",
+   "code": "MA111",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "IT",
+   "code": "CY110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "IT",
+   "code": "ME110",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "IT",
+   "code": "ME111",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "IT",
+   "code": "WO110",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "IT",
+   "code": "CS110",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "IT",
+   "code": "SM110",
+   "semester": 2,
+   "category": "HSC"
+  },
+  {
+   "programme": "IT",
+   "code": "SM300",
+   "semester": 5,
+   "category": "HSC"
+  },
+  {
+   "programme": "IT",
+   "code": "SM302",
+   "semester": 6,
+   "category": "HSC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT110",
+   "semester": 1,
+   "category": "PC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT150",
+   "semester": 2,
+   "category": "PC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT200",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT201",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT202",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT203",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT204",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT250",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT251",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT252",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT253",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT254",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT300",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT301",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT302",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT303",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT350",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT351",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT352",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "IT",
+   "code": "IT360",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT361",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT362",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT363",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT364",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT365",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT366",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT372",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT400",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT401",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT402",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT403",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT404",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT405",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT406",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT407",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT408",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT409",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT410",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT411",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT412",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT413",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT414",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT415",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT416",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT417",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT418",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT419",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT420",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT421",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT422",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT423",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT450",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT451",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT452",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT453",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT454",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT455",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT456",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT457",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT458",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT459",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT460",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT461",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT462",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT463",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT464",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT465",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT466",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT467",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT468",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT482",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT483",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT484",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT486",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT487",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "IT488",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "IT",
+   "code": "CV110",
+   "semester": 1,
+   "category": "MLC"
+  },
+  {
+   "programme": "IT",
+   "code": "SM111",
+   "semester": 2,
+   "category": "MLC"
+  },
+  {
+   "programme": "IT",
+   "code": "UC100",
+   "semester": 1,
+   "category": "MLC"
+  },
+  {
+   "programme": "AI",
+   "code": "CY110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "AI",
+   "code": "MA110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "AI",
+   "code": "MA111",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "AI",
+   "code": "PH110",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "AI",
+   "code": "CS110",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "AI",
+   "code": "EC100",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "AI",
+   "code": "ME111",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "AI",
+   "code": "WO110",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "AI",
+   "code": "SM110",
+   "semester": 2,
+   "category": "HSC"
+  },
+  {
+   "programme": "AI",
+   "code": "SM300",
+   "semester": 5,
+   "category": "HSC"
+  },
+  {
+   "programme": "AI",
+   "code": "SM302",
+   "semester": 6,
+   "category": "HSC"
+  },
+  {
+   "programme": "AI",
+   "code": "IT111",
+   "semester": 1,
+   "category": "PC"
+  },
+  {
+   "programme": "AI",
+   "code": "IT151",
+   "semester": 2,
+   "category": "PC"
+  },
+  {
+   "programme": "AI",
+   "code": "IT207",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "AI",
+   "code": "IT208",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "AI",
+   "code": "IT209",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "AI",
+   "code": "IT211",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "AI",
+   "code": "IT255",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "AI",
+   "code": "IT256",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "AI",
+   "code": "IT257",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "AI",
+   "code": "IT258",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "AI",
+   "code": "IT304",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "AI",
+   "code": "IT305",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "AI",
+   "code": "IT306",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "AI",
+   "code": "IT307",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "AI",
+   "code": "IT353",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "AI",
+   "code": "IT354",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "AI",
+   "code": "IT213",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT355",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT371",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT431",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT436",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT437",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT472",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT473",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT474",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT475",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT477",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT479",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT489",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT308",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT356",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT357",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT424",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT425",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT432",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT439",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT445",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT476",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT260",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT358",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT359",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT427",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT435",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT443",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT469",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT485",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT212",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT259",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT367",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT369",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT370",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT438",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT480",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT478",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT368",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT426",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT428",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT429",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT430",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT433",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT434",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT442",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "IT471",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "AI",
+   "code": "CV110",
+   "semester": 1,
+   "category": "MLC"
+  },
+  {
+   "programme": "AI",
+   "code": "UC100",
+   "semester": 1,
+   "category": "MLC"
+  },
+  {
+   "programme": "AI",
+   "code": "SM111",
+   "semester": 2,
+   "category": "MLC"
+  },
+  {
+   "programme": "CDS",
+   "code": "CY110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA111",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "CDS",
+   "code": "PH110",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "CDS",
+   "code": "CS100",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "CDS",
+   "code": "EC100",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "CDS",
+   "code": "ME111",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "CDS",
+   "code": "WO110",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "CDS",
+   "code": "SM110",
+   "semester": 2,
+   "category": "HSC"
+  },
+  {
+   "programme": "CDS",
+   "code": "SM300",
+   "semester": 6,
+   "category": "HSC"
+  },
+  {
+   "programme": "CDS",
+   "code": "SM302",
+   "semester": 7,
+   "category": "HSC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA112",
+   "semester": 1,
+   "category": "PC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA113",
+   "semester": 2,
+   "category": "PC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA202",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA207",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA208",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA221",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA222",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA223",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA226",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA227",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA302",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA303",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA321",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA322",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA325",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA326",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA406",
+   "semester": 7,
+   "category": "PC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA421",
+   "semester": 7,
+   "category": "PC"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA201",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA206",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA401",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA403",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA405",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA408",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA506",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA507",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA508",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA509",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA512",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA513",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA514",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA515",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA516",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA517",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA518",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA519",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA520",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA521",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA523",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA525",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA526",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA527",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA528",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA529",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA531",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA532",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA533",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA534",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA535",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA536",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA537",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA538",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA539",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA540",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA541",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA542",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA543",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA544",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA545",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "MA546",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "CDS",
+   "code": "CV110",
+   "semester": 1,
+   "category": "MLC"
+  },
+  {
+   "programme": "CDS",
+   "code": "UC100",
+   "semester": 1,
+   "category": "MLC"
+  },
+  {
+   "programme": "CDS",
+   "code": "SM111",
+   "semester": 2,
+   "category": "MLC"
+  },
+  {
+   "programme": "ME",
+   "code": "CY110",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "ME",
+   "code": "MA110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "ME",
+   "code": "MA111",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "ME",
+   "code": "MA207",
+   "semester": 3,
+   "category": "BSC"
+  },
+  {
+   "programme": "ME",
+   "code": "MA208",
+   "semester": 4,
+   "category": "BSC"
+  },
+  {
+   "programme": "ME",
+   "code": "PH110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "ME",
+   "code": "CS100",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "ME",
+   "code": "EC100",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "ME",
+   "code": "EE110",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME111",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "ME",
+   "code": "WO110",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "ME",
+   "code": "SM110",
+   "semester": 1,
+   "category": "HSC"
+  },
+  {
+   "programme": "ME",
+   "code": "SM300",
+   "semester": 6,
+   "category": "HSC"
+  },
+  {
+   "programme": "ME",
+   "code": "SM302",
+   "semester": 5,
+   "category": "HSC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME112",
+   "semester": 2,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME113",
+   "semester": 2,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME201",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME202",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME203",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME204",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME251",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME252",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME253",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME254",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME255",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME301",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME302",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME303",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME304",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME305",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME351",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME352",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME353",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME354",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "ME",
+   "code": "ME311",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME312",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME313",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME314",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME315",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME316",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME317",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME318",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME320",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME411",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME412",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME413",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME414",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME415",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME416",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME417",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME418",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME419",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME420",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME421",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME422",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME423",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME424",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME425",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME426",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME427",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME428",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME429",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME430",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME431",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME432",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME433",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME434",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME435",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME436",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME437",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME438",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME439",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME441",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME442",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME443",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "ME444",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "ME",
+   "code": "SM111",
+   "semester": 1,
+   "category": "MLC"
+  },
+  {
+   "programme": "ME",
+   "code": "CV110",
+   "semester": 2,
+   "category": "MLC"
+  },
+  {
+   "programme": "ME",
+   "code": "UC100",
+   "semester": 2,
+   "category": "MLC"
+  },
+  {
+   "programme": "MT",
+   "code": "CY110",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "MT",
+   "code": "MA110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "MT",
+   "code": "MA111",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "MT",
+   "code": "PH110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "MT",
+   "code": "CS100",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "MT",
+   "code": "EC100",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "MT",
+   "code": "EE110",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "MT",
+   "code": "ME110",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "MT",
+   "code": "ME111",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "MT",
+   "code": "WO110",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "MT",
+   "code": "WO200",
+   "semester": 3,
+   "category": "ESC"
+  },
+  {
+   "programme": "MT",
+   "code": "SM110",
+   "semester": 1,
+   "category": "HSC"
+  },
+  {
+   "programme": "MT",
+   "code": "SM300",
+   "semester": 6,
+   "category": "HSC"
+  },
+  {
+   "programme": "MT",
+   "code": "SM302",
+   "semester": 5,
+   "category": "HSC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT160",
+   "semester": 2,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT200",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT201",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT202",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT203",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT251",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT252",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT253",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT254",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT255",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT256",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT300",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT301",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT302",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT303",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT350",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT351",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT400",
+   "semester": 7,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT401",
+   "semester": 7,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT403",
+   "semester": 7,
+   "category": "PC"
+  },
+  {
+   "programme": "MT",
+   "code": "MT306",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "MT307",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "MT355",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "MT356",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "MT357",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "MT402",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "MT404",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "MT405",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "MT406",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "MT407",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "MT408",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "MT409",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "MT410",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "MT451",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "MT452",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "MT453",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "MT454",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "MT455",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "MT456",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "MT457",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MT",
+   "code": "CV110",
+   "semester": 2,
+   "category": "MLC"
+  },
+  {
+   "programme": "MT",
+   "code": "SM111",
+   "semester": 1,
+   "category": "MLC"
+  },
+  {
+   "programme": "MT",
+   "code": "UC100",
+   "semester": 2,
+   "category": "MLC"
+  },
+  {
+   "programme": "MN",
+   "code": "CY110",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "MN",
+   "code": "MA110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "MN",
+   "code": "MA111",
+   "semester": 2,
+   "category": "BSC"
+  },
+  {
+   "programme": "MN",
+   "code": "PH110",
+   "semester": 1,
+   "category": "BSC"
+  },
+  {
+   "programme": "MN",
+   "code": "CS100",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "MN",
+   "code": "EC100",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "MN",
+   "code": "EE110",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "MN",
+   "code": "ME110",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "MN",
+   "code": "ME111",
+   "semester": 1,
+   "category": "ESC"
+  },
+  {
+   "programme": "MN",
+   "code": "ME211",
+   "semester": 4,
+   "category": "ESC"
+  },
+  {
+   "programme": "MN",
+   "code": "WO110",
+   "semester": 2,
+   "category": "ESC"
+  },
+  {
+   "programme": "MN",
+   "code": "SM110",
+   "semester": 1,
+   "category": "HSC"
+  },
+  {
+   "programme": "MN",
+   "code": "SM300",
+   "semester": 6,
+   "category": "HSC"
+  },
+  {
+   "programme": "MN",
+   "code": "SM302",
+   "semester": 5,
+   "category": "HSC"
+  },
+  {
+   "programme": "MN",
+   "code": "CV203",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "MN",
+   "code": "MI101",
+   "semester": 2,
+   "category": "PC"
+  },
+  {
+   "programme": "MN",
+   "code": "MI201",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "MN",
+   "code": "MI202",
+   "semester": 3,
+   "category": "PC"
+  },
+  {
+   "programme": "MN",
+   "code": "MI254",
+   "semester": 4,
+   "category": "PC"
+  },
+  {
+   "programme": "MN",
+   "code": "MI301",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "MN",
+   "code": "MI302",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "MN",
+   "code": "MI303",
+   "semester": 5,
+   "category": "PC"
+  },
+  {
+   "programme": "MN",
+   "code": "MI351",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "MN",
+   "code": "MI352",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "MN",
+   "code": "MI354",
+   "semester": 6,
+   "category": "PC"
+  },
+  {
+   "programme": "MN",
+   "code": "MI401",
+   "semester": 7,
+   "category": "PC"
+  },
+  {
+   "programme": "MN",
+   "code": "MI403",
+   "semester": 7,
+   "category": "PC"
+  },
+  {
+   "programme": "MN",
+   "code": "MI405",
+   "semester": 7,
+   "category": "PC"
+  },
+  {
+   "programme": "MN",
+   "code": "MI451",
+   "semester": 8,
+   "category": "PC"
+  },
+  {
+   "programme": "MN",
+   "code": "MI452",
+   "semester": 8,
+   "category": "PC"
+  },
+  {
+   "programme": "MN",
+   "code": "MI210",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI211",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI260",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI261",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI310",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI311",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI312",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI360",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI361",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI362",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI363",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI410",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI411",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI412",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI460",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI461",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI462",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI463",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI464",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI471",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI472",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI473",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI474",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI475",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI476",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI477",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI478",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "MI479",
+   "semester": null,
+   "category": "PSE"
+  },
+  {
+   "programme": "MN",
+   "code": "CV110",
+   "semester": 2,
+   "category": "MLC"
+  },
+  {
+   "programme": "MN",
+   "code": "SM111",
+   "semester": 1,
+   "category": "MLC"
+  },
+  {
+   "programme": "MN",
+   "code": "UC100",
+   "semester": 2,
+   "category": "MLC"
+  }
+ ]
+}

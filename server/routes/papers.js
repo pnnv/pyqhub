@@ -13,14 +13,14 @@ const upload = multer({
   limits: { fileSize: config.maxUploadMb * 1024 * 1024, files: 1 },
 });
 
-const EXAM_TYPES = new Set(['mid', 'end']);
+const EXAM_TYPES = new Set(['mid', 'end', 'quiz']);
+const COURSES_PER_PAGE = 40;
 const thisYear = () => new Date().getFullYear();
 
 const paperSelect = `
-  SELECT p.id, p.exam_year, p.exam_type, p.file_size, p.note, p.status, p.reject_reason,
-         p.views, p.downloads, p.created_at, p.uploader_id,
-         s.code AS subject_code, s.name AS subject_name, s.year AS study_year,
-         s.branch_code AS branch, u.name AS uploader
+  SELECT p.id, p.exam_year, p.exam_type, p.quiz_label, p.held_on, p.file_size, p.note, p.status,
+         p.reject_reason, p.views, p.downloads, p.created_at, p.uploader_id,
+         s.code AS subject_code, s.name AS subject_name, u.name AS uploader
     FROM papers p
     JOIN subjects s ON s.id = p.subject_id
     LEFT JOIN users u ON u.id = p.uploader_id`;
@@ -46,7 +46,7 @@ papersRouter.get('/papers', (req, res) => {
     params.push(`${code}%`, `%${q}%`);
   }
   if (req.query.branch) {
-    where.push('(s.branch_code = ? OR s.branch_code IS NULL)');
+    where.push('EXISTS (SELECT 1 FROM offerings o WHERE o.subject_id = s.id AND o.branch_code = ?)');
     params.push(String(req.query.branch).toUpperCase());
   }
   if (req.query.year) {
@@ -58,38 +58,68 @@ papersRouter.get('/papers', (req, res) => {
     params.push(req.query.type);
   }
 
-  const papers = db
+  // Results come a page of courses at a time, with every matching paper for those courses;
+  // the totals are counted separately so they stay true however many pages there are.
+  const filter = where.join(' AND ');
+  const page = Math.max(1, Math.floor(Number(req.query.page)) || 1);
+  const total = db
     .prepare(
-      `${paperSelect} WHERE ${where.join(' AND ')}
-       ORDER BY s.code, p.exam_year DESC, p.exam_type LIMIT 200`,
+      `SELECT COUNT(*) AS papers, COUNT(DISTINCT p.subject_id) AS courses
+         FROM papers p JOIN subjects s ON s.id = p.subject_id WHERE ${filter}`,
     )
-    .all(...params);
+    .get(...params);
+  const codes = db
+    .prepare(
+      `SELECT s.code FROM papers p JOIN subjects s ON s.id = p.subject_id WHERE ${filter}
+        GROUP BY s.code ORDER BY s.code LIMIT ? OFFSET ?`,
+    )
+    .all(...params, COURSES_PER_PAGE, (page - 1) * COURSES_PER_PAGE)
+    .map((r) => r.code);
+  const papers = codes.length
+    ? db
+        .prepare(
+          `${paperSelect} WHERE ${filter} AND s.code IN (${codes.map(() => '?').join(', ')})
+           ORDER BY s.code, p.exam_year DESC, p.exam_type, p.held_on DESC`,
+        )
+        .all(...params, ...codes)
+    : [];
 
-  // For each matching course: every approved paper from the last five years (ignoring the
-  // year/exam filters), so the results can show which slots are covered and which are missing.
+  // For each matching course: every approved mid/end-sem paper from the last five years
+  // (ignoring the year/exam filters), so the results can show which slots are covered and
+  // which are missing. Quizzes have no fixed slots, so they're only counted.
   const since = thisYear() - 4;
   const slots = db.prepare(
     `SELECT p.id, p.exam_year, p.exam_type FROM papers p JOIN subjects s ON s.id = p.subject_id
-      WHERE s.code = ? AND p.status = 'approved' AND p.exam_year >= ?
+      WHERE s.code = ? AND p.status = 'approved' AND p.exam_type <> 'quiz' AND p.exam_year >= ?
       ORDER BY p.exam_year DESC, p.exam_type`,
   );
-  const total = db.prepare(
-    `SELECT COUNT(*) AS n FROM papers p JOIN subjects s ON s.id = p.subject_id
+  const totals = db.prepare(
+    `SELECT SUM(p.exam_type <> 'quiz') AS papers, SUM(p.exam_type = 'quiz') AS quizzes
+       FROM papers p JOIN subjects s ON s.id = p.subject_id
       WHERE s.code = ? AND p.status = 'approved'`,
   );
   const courses = [];
   for (const p of papers) {
     if (courses.at(-1)?.code === p.subject_code) continue;
+    const total = totals.get(p.subject_code);
     courses.push({
       code: p.subject_code,
       name: p.subject_name,
-      total: total.get(p.subject_code).n,
+      total: total.papers ?? 0,
+      quizzes: total.quizzes ?? 0,
       slots: slots.all(p.subject_code, since),
     });
   }
 
   if (q) logEvent('search', { userId: req.user?.id, detail: q.slice(0, 100) });
-  res.json({ papers: papers.map(({ uploader_id, reject_reason, status, ...p }) => p), courses });
+  res.json({
+    papers: papers.map(({ uploader_id, reject_reason, status, ...p }) => p),
+    courses,
+    total,
+    page,
+    perPage: COURSES_PER_PAGE,
+    pages: Math.max(1, Math.ceil(total.courses / COURSES_PER_PAGE)),
+  });
 });
 
 papersRouter.get('/papers/:id', (req, res) => {
@@ -107,7 +137,10 @@ papersRouter.get('/papers/:id/file', (req, res) => {
     logEvent(download ? 'download' : 'view', { paperId: paper.id, userId: req.user?.id });
   }
 
-  const type = paper.exam_type === 'mid' ? 'MidSem' : 'EndSem';
+  const type =
+    paper.exam_type === 'quiz'
+      ? (paper.quiz_label || 'Quiz').replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '')
+      : paper.exam_type === 'mid' ? 'MidSem' : 'EndSem';
   const filename = `${paper.subject_code}_${type}_${paper.exam_year}.pdf`;
   res.setHeader('Content-Type', 'application/pdf');
   res.setHeader('Content-Disposition', `${download ? 'attachment' : 'inline'}; filename="${filename}"`);
@@ -134,7 +167,25 @@ papersRouter.post('/papers', requireVerified, upload.single('file'), async (req,
     throw new HttpError(400, `Exam year must be between 2000 and ${thisYear()}.`);
   }
   const examType = String(req.body.exam_type);
-  if (!EXAM_TYPES.has(examType)) throw new HttpError(400, 'Choose mid-sem or end-sem.');
+  if (!EXAM_TYPES.has(examType)) throw new HttpError(400, 'Choose mid-sem, end-sem or quiz.');
+
+  // Quizzes happen whenever the instructor decides, so they carry a name and date instead of a slot.
+  let quizLabel = null;
+  let heldOn = null;
+  if (examType === 'quiz') {
+    quizLabel = String(req.body.quiz_label ?? '').trim().replace(/\s+/g, ' ').slice(0, 40) || null;
+    heldOn = String(req.body.held_on ?? '').trim() || null;
+    if (heldOn) {
+      const date = new Date(`${heldOn}T00:00:00Z`);
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(heldOn) || Number.isNaN(date.getTime())) {
+        throw new HttpError(400, 'Enter the quiz date as a full date, or leave it empty.');
+      }
+      if (date.getUTCFullYear() !== examYear) {
+        throw new HttpError(400, `The quiz date is in ${date.getUTCFullYear()} but the exam year is ${examYear}.`);
+      }
+      if (date > new Date()) throw new HttpError(400, 'The quiz date is in the future.');
+    }
+  }
 
   const hash = crypto.createHash('sha256').update(file.buffer).digest('hex');
   const dup = db
@@ -155,10 +206,11 @@ papersRouter.post('/papers', requireVerified, upload.single('file'), async (req,
   const note = String(req.body.note ?? '').trim().slice(0, 200) || null;
   const { lastInsertRowid } = db
     .prepare(
-      `INSERT INTO papers (subject_id, exam_year, exam_type, file_key, file_hash, file_size, original_name, note, uploader_id)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO papers (subject_id, exam_year, exam_type, quiz_label, held_on, file_key, file_hash,
+                          file_size, original_name, note, uploader_id)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     )
-    .run(subject.id, examYear, examType, key, hash, file.size, file.originalname.slice(0, 200), note, req.user.id);
+    .run(subject.id, examYear, examType, quizLabel, heldOn, key, hash, file.size, file.originalname.slice(0, 200), note, req.user.id);
 
   logEvent('upload', { paperId: Number(lastInsertRowid), userId: req.user.id });
   res.status(201).json({ paper: findVisiblePaper(lastInsertRowid, req.user) });

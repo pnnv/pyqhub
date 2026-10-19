@@ -1,5 +1,6 @@
 import { api, examYears, html, plural } from '../lib.js';
 import { attachCourseSuggest } from '../suggest.js';
+import { countsLabel } from './browse.js';
 import { navigate } from '../app.js';
 
 export async function homeView() {
@@ -41,17 +42,18 @@ export async function homeView() {
             <span class="line-label" id="find-exam">Exam</span>
             <div class="line-field">
               <div class="seg" role="radiogroup" aria-labelledby="find-exam">
-                <label><input type="radio" name="type" value="" checked /><span>Both exams</span></label>
+                <label><input type="radio" name="type" value="" checked /><span>All</span></label>
                 <label><input type="radio" name="type" value="mid" /><span>Mid-sem</span></label>
                 <label><input type="radio" name="type" value="end" /><span>End-sem</span></label>
+                <label><input type="radio" name="type" value="quiz" /><span>Quizzes</span></label>
               </div>
             </div>
           </div>
         </form>
       </section>
       <p class="find-note">
-        ${plural(totals.papers, 'paper')} for ${plural(totals.subjects, 'course')} so far, uploaded by students
-        and checked by admins.
+        ${plural(totals.papers, 'paper')} and ${plural(totals.quizzes, 'quiz', 'quizzes')} for ${plural(totals.subjects, 'course')}
+        so far, uploaded by students and checked by admins.
       </p>
 
       <section class="browse">
@@ -62,13 +64,14 @@ export async function homeView() {
               <a href="/branch/${b.code}">
                 <span class="code">${b.code}</span>
                 <span class="branch-name">${b.name}</span>
-                <span class="count">${b.papers ? plural(b.papers, 'paper') : 'No papers yet'}</span>
+                <span class="count">${countsLabel(b)}</span>
               </a>
             </li>`,
           )}
         </ul>
         <p class="small muted" style="margin-top:14px">
-          First-year courses are common to all branches and appear under 1st year in each one.
+          Courses from the 2025 curriculum. A course taught in several branches, like Engineering Mathematics, is
+          listed under each of them.
         </p>
       </section>
     `,
